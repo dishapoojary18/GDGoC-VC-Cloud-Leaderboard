@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>GDGoC VC | Cloud Leaderboard 2026–27</title>
 
     <style>
@@ -39,6 +41,27 @@
 
         header p {
             color: #5f6368;
+            line-height: 1.6;
+        }
+
+        .celebration-message {
+            text-align: center;
+            background: linear-gradient(135deg, #e8f0fe, #fce8ff, #fff4d6);
+            padding: 25px 18px;
+            margin-bottom: 22px;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .celebration-message h2 {
+            color: #1a73e8;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .celebration-message p {
+            color: #5f6368;
+            font-size: 15px;
             line-height: 1.6;
         }
 
@@ -112,6 +135,15 @@
             padding: 20px;
         }
 
+        #celebrationCanvas {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
         @media (max-width: 600px) {
             body {
                 padding: 12px;
@@ -125,6 +157,10 @@
                 font-size: 22px;
             }
 
+            .celebration-message h2 {
+                font-size: 20px;
+            }
+
             .stats {
                 grid-template-columns: 1fr;
             }
@@ -133,38 +169,6 @@
                 padding: 16px;
             }
         }
-        /* Celebration message */
-
-.celebration-message {
-    text-align: center;
-    background: linear-gradient(135deg, #e8f0fe, #fce8ff, #fff4d6);
-    padding: 22px;
-    margin-bottom: 22px;
-    border-radius: 16px;
-    border: 1px solid #e5e7eb;
-}
-
-.celebration-message h2 {
-    color: #1a73e8;
-    font-size: 24px;
-    margin-bottom: 8px;
-}
-
-.celebration-message p {
-    color: #5f6368;
-    font-size: 15px;
-}
-
-/* Confetti animation layer */
-
-#celebrationCanvas {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 9999;
-}
     </style>
 </head>
 
@@ -181,6 +185,19 @@
             Cloud Campaign 2026–27 | Learn. Build. Achieve.
         </p>
     </header>
+
+    <!-- Congratulations Message -->
+
+    <div class="celebration-message">
+        <h2>🎉 Congratulations to All Participants! 🎉</h2>
+        <p>
+            Your hard work, learning and achievements deserve to be celebrated!
+        </p>
+    </div>
+
+    <!-- Confetti Animation -->
+
+    <canvas id="celebrationCanvas"></canvas>
 
     <!-- Statistics -->
 
@@ -219,16 +236,15 @@
 </div>
 
 <script>
+    // LEADERBOARD
 
     const table = document.querySelector(".leaderboard");
 
     if (table) {
-
         const headerRow = table.querySelector("thead tr");
         const tbody = table.querySelector("tbody");
 
         if (headerRow && tbody) {
-
             const headers = Array.from(headerRow.querySelectorAll("th"));
 
             const findColumn = (name) =>
@@ -242,53 +258,185 @@
 
             if (rankIndex !== -1 && nameIndex !== -1 && badgesIndex !== -1) {
 
+                const keepIndexes = [rankIndex, nameIndex, badgesIndex];
+
                 const rows = Array.from(tbody.querySelectorAll("tr"));
 
-                // Sort by badges completed, highest first.
+                // Sort by badge count, highest first.
 
                 rows.sort((a, b) => {
-                    const badgesA = parseInt(a.cells[badgesIndex].textContent) || 0;
-                    const badgesB = parseInt(b.cells[badgesIndex].textContent) || 0;
-
+                    const badgesA = parseInt(a.cells[badgesIndex]?.textContent) || 0;
+                    const badgesB = parseInt(b.cells[badgesIndex]?.textContent) || 0;
                     return badgesB - badgesA;
                 });
 
-                // Display only Rank, Name and Badges Completed.
+                // Keep only the required columns and assign ranks.
 
-                const keepIndexes = [rankIndex, nameIndex, badgesIndex];
+                headerRow.replaceChildren(
+                    ...keepIndexes.map(index => headers[index])
+                );
 
-                headers.forEach((header, index) => {
-                    if (!keepIndexes.includes(index)) {
-                        header.remove();
-                    }
-                });
+                headerRow.cells[1].textContent = "Name";
 
                 rows.forEach((row, index) => {
-
                     const cells = Array.from(row.children);
 
-                    cells.forEach((cell, cellIndex) => {
-                        if (!keepIndexes.includes(cellIndex)) {
-                            cell.remove();
-                        }
-                    });
-
-                    // Assign rank automatically.
+                    row.replaceChildren(
+                        ...keepIndexes.map(columnIndex => cells[columnIndex])
+                    );
 
                     row.cells[0].textContent = index + 1;
 
                     tbody.appendChild(row);
                 });
 
-                // Change Display Name heading to Name.
-
-                headerRow.cells[1].textContent = "Name";
-
             } else {
                 console.error("Required leaderboard columns were not found.");
             }
         }
     }
+
+    // CELEBRATION CONFETTI AND SPARKLES
+
+    (function () {
+        const canvas = document.getElementById("celebrationCanvas");
+
+        if (!canvas) return;
+
+        const ctx = canvas.getContext("2d");
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            canvas.style.display = "none";
+            return;
+        }
+
+        let particles = [];
+        let startTime;
+        let animationFrame;
+
+        const colors = [
+            "#4285F4",
+            "#EA4335",
+            "#FBBC05",
+            "#34A853",
+            "#A142F4",
+            "#FF69B4",
+            "#00BCD4",
+            "#FF8C42"
+        ];
+
+        function resizeCanvas() {
+            const dpr = window.devicePixelRatio || 1;
+
+            canvas.width = window.innerWidth * dpr;
+            canvas.height = window.innerHeight * dpr;
+
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+
+        function createParticle() {
+            return {
+                x: Math.random() * window.innerWidth,
+                y: -20 - Math.random() * window.innerHeight,
+                size: Math.random() * 7 + 3,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                speedY: Math.random() * 3 + 2,
+                speedX: Math.random() * 2 - 1,
+                rotation: Math.random() * 360,
+                rotationSpeed: Math.random() * 8 - 4,
+                sparkle: Math.random() > 0.7
+            };
+        }
+
+        function drawSparkle(x, y, size, color) {
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(-size, 0);
+            ctx.lineTo(size, 0);
+            ctx.moveTo(0, -size);
+            ctx.lineTo(0, size);
+            ctx.stroke();
+            ctx.restore();
+        }
+
+        function startCelebration() {
+            resizeCanvas();
+
+            particles = Array.from(
+                { length: 160 },
+                createParticle
+            );
+
+            startTime = performance.now();
+
+            function animate(time) {
+                const elapsed = time - startTime;
+
+                ctx.clearRect(
+                    0,
+                    0,
+                    window.innerWidth,
+                    window.innerHeight
+                );
+
+                particles.forEach(particle => {
+                    particle.x += particle.speedX;
+                    particle.y += particle.speedY;
+                    particle.rotation += particle.rotationSpeed;
+
+                    ctx.save();
+
+                    ctx.translate(particle.x, particle.y);
+                    ctx.rotate(particle.rotation * Math.PI / 180);
+                    ctx.fillStyle = particle.color;
+
+                    if (particle.sparkle) {
+                        drawSparkle(
+                            0, 0,
+                            particle.size,
+                            particle.color
+                        );
+                    } else {
+                        ctx.fillRect(
+                            -particle.size / 2,
+                            -particle.size / 2,
+                            particle.size,
+                            particle.size * 1.5
+                        );
+                    }
+
+                    ctx.restore();
+                });
+
+                if (elapsed < 5000) {
+                    animationFrame = requestAnimationFrame(animate);
+                } else {
+                    cancelAnimationFrame(animationFrame);
+
+                    ctx.clearRect(
+                        0,
+                        0,
+                        window.innerWidth,
+                        window.innerHeight
+                    );
+
+                    canvas.style.display = "none";
+                }
+            }
+
+            animationFrame = requestAnimationFrame(animate);
+        }
+
+        window.addEventListener("resize", resizeCanvas);
+
+        // Start automatically when the page opens.
+
+        startCelebration();
+
+    })();
 
 </script>
 
