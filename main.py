@@ -1,19 +1,27 @@
+import os
+import re
+import time
+from io import StringIO
+from datetime import datetime
+from urllib.parse import quote
+
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime
-import pandas as pd
-import urllib.parse
-import os
-from jinja2 import Environment, FileSystemLoader, select_autoescape
+from jinja2 import Environment, FileSystemLoader
 import pytz
 
-env = Environment(
-    loader=FileSystemLoader("templates"),
-    autoescape=select_autoescape()
-)
 
-required_tasks = ["The Basics of Google Cloud Compute",
+# -----------------------------
+# CONFIGURATION
+# -----------------------------
+
+SHEET_ID = os.getenv("SHEET_ID")
+
+SHEET_NAME = quote("Leaderboard Data")
+
+REQUIRED_BADGES = [
+    "The Basics of Google Cloud Compute",
     "Configure Service Accounts and IAM Roles for Google Cloud",
     "Implement Speech and Language Solutions with Pre-trained APIs",
     "Develop AI-Powered Prototypes in Google AI Studio",
@@ -22,151 +30,274 @@ required_tasks = ["The Basics of Google Cloud Compute",
     "Create Your First Gemini Enterprise Application",
     "Store, Process, and Manage Data on Google Cloud - Console",
     "Using the Google Cloud Speech API",
-    "Explore Generative AI in Agent Platform"]
+    "Explore Generative AI in Agent Platform",
+]
 
-sheet_id = os.environ.get("SHEET_ID")
-sheet_name = urllib.parse.quote("Leaderboard Data")
-url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
-df = pd.read_csv(url)
-
-# rename columns Student ID to ID and Public Profile URL to Public Profile
-df.rename(columns={"Student ID": "ID",
-          "Public Profile Url": "Public Profile"}, inplace=True)
-
-# print(df.columns)
-# remove other columns
-df = df[["ID", "Public Profile"]]
-
-# extract row with duplicate Public Profile
-duplicated_profile = df[df.duplicated(subset="Public Profile", keep=False)]
-
-# if there is duplicate ID, keep the last one
-df.drop_duplicates(subset="ID", keep="last", inplace=True)
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (compatible; GDGoC-VC-Leaderboard/1.0)"
+}
 
 
-def get_task_name(div):
-    return div.find("span", class_="ql-title-medium l-mts").text.strip()
+# -----------------------------
+# HELPER FUNCTIONS
+# -----------------------------
+
+def normalize(text):
+    """Normalize text for badge-name comparison."""
+    text = str(text).lower()
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
 
 
-def get_task_date(div):
-    date_time_str = div.find(
-        "span", class_="ql-body-medium l-mbs").text.strip().replace("Earned ", "").replace(" EDT", "").replace(" EST", "")
+def find_required_badges(source_text):
+    """Find matching curriculum badges in a text source."""
+    source = normalize(source_text)
+
+    completed = set()
+
+    for badge in REQUIRED_BADGES:
+        if normalize(badge) in source:
+            completed.add(badge)
+
+    return completed
+
+
+def get_profile_badges(profile_url):
+    """Read badge names from a public Google Skills Boost profile."""
+
+    if not isinstance(profile_url, str) or not profile_url.startswith("http"):
+        return set()
+
     try:
-        return datetime.strptime(date_time_str, '%b  %d, %Y')
-    except Exception as ex:
-        print(date_time_str)
-        return pd.NaT
+        response = requests.get(
+            profile_url,
+            headers=HEADERS,
+            timeout=6
+        )
+        response.raise_for_status()
+
+        soup = BeautifulSoup(response.text, "html.parser")
+
+        badge_elements = soup.select(
+            "span.ql-title-medium.l-mts"
+        )
+
+        profile_badges = set()
+
+        for element in badge_elements:
+            badge_name = element.get_text(" ", strip=True)
+
+            for required_badge in REQUIRED_BADGES:
+                if normalize(badge_name) == normalize(required_badge):
+                    profile_badges.add(required_badge)
+
+        return profile_badges
+
+    except requests.RequestException as error:
+        print(f"Could not read profile: {profile_url} - {error}")
+        return set()
+
+    except Exception as error:
+        print(f"Profile processing error: {error}")
+        return set()
 
 
-def convert(tup):
-    di = {}
-    for a, b in tup:
-        di.setdefault(a, []).append(b)
-    return di
+# -----------------------------
+# READ GOOGLE SHEET
+# -----------------------------
+
+def read_google_sheet():
+
+    if not SHEET_ID:
+        raise ValueError("SHEET_ID secret is missing.")
+
+    sheet_url = (
+        f"https://docs.google.com/spreadsheets/d/"
+        f"{SHEET_ID}/gviz/tq?tqx=out:csv&sheet={SHEET_NAME}"
+    )
+
+    print("Reading Google Sheet...")
+
+    response = requests.get(
+        sheet_url,
+        headers=HEADERS,
+        timeout=30
+    )
+
+    response.raise_for_status()
+
+    data = pd.read_csv(StringIO(response.text))
+
+    data.columns = data.columns.str.strip()
+
+    required_columns = [
+        "Participant ID",
+        "Display Name",
+        "Public Profile URL",
+        "Sheet Badge Names",
+        "Milestone Completed",
+        "GEAR Digital Badges",
+    ]
+
+    missing_columns = [
+        column for column in required_columns
+        if column not in data.columns
+    ]
+
+    if missing_columns:
+        raise ValueError(
+            f"Missing columns in Google Sheet: {missing_columns}"
+        )
+
+    data = data.fillna("")
+
+    print(f"Loaded {len(data)} participants.")
+
+    return data
 
 
-def get_tasks(x):
-    id = x['ID']
-    url = x['Public Profile']
-    page = requests.get(x['Public Profile'])
-    soup = BeautifulSoup(page.content, "html.parser")
-    profile_badges = soup.find_all("div", class_="profile-badge")
-    tasks = list(
-        map(lambda b: (get_task_name(b), get_task_date(b)), profile_badges))
-    x["ID"] = id
-    x["Public Profile"] = url
-    for k, v in tasks:
-        x[k] = v
-    for task in required_tasks:
-        if task not in x:
-            x[task] = pd.NaT
-    return x
+# -----------------------------
+# BUILD LEADERBOARD
+# -----------------------------
+
+def build_leaderboard(data):
+
+    leaderboard = []
+
+    for _, participant in data.iterrows():
+
+        participant_id = participant["Participant ID"]
+        name = participant["Display Name"]
+        profile_url = participant["Public Profile URL"]
+
+        sheet_badge_text = participant["Sheet Badge Names"]
+
+        # Badges recorded in Google Sheet
+        sheet_badges = find_required_badges(sheet_badge_text)
+
+        # Badges found on public profile
+        profile_badges = get_profile_badges(profile_url)
+
+        # Combine unique badges to avoid double-counting
+        completed_badges = sheet_badges.union(profile_badges)
+
+        completed_count = len(completed_badges)
+
+        completed_names = [
+            badge for badge in REQUIRED_BADGES
+            if badge in completed_badges
+        ]
+
+        progress = round(
+            (completed_count / len(REQUIRED_BADGES)) * 100
+        )
+
+        leaderboard.append({
+            "Participant ID": participant_id,
+            "Display Name": name,
+            "Public Profile URL": profile_url,
+            "Badges Completed": completed_count,
+            "Progress": f"{progress}%",
+            "Completed Skill Badges": ", ".join(completed_names),
+            "Milestone Completed": participant["Milestone Completed"],
+            "GEAR Digital Badges": participant["GEAR Digital Badges"],
+        })
+
+        print(
+            f"Processed {name}: "
+            f"{completed_count}/{len(REQUIRED_BADGES)} badges"
+        )
+
+        # Small pause between profile requests
+        time.sleep(0.2)
+
+    result = pd.DataFrame(leaderboard)
+
+    result = result.sort_values(
+        by=["Badges Completed", "Display Name"],
+        ascending=[False, True]
+    ).reset_index(drop=True)
+
+    result.insert(
+        0,
+        "Rank",
+        range(1, len(result) + 1)
+    )
+
+    return result
 
 
-left_cols = ['ID', 'Public Profile']
+# -----------------------------
+# GENERATE REPORT FILES
+# -----------------------------
+
+def generate_reports(leaderboard):
+
+    timezone = pytz.timezone("Asia/Kolkata")
+    current_time = datetime.now(timezone)
+
+    formatted_time = current_time.strftime(
+        "%d %B %Y, %I:%M %p"
+    )
+
+    # CSV report
+    leaderboard.to_csv(
+        "report.csv",
+        index=False
+    )
+
+    # Excel report
+    leaderboard.to_excel(
+        "report.xlsx",
+        index=False
+    )
+
+    # HTML table
+    table = leaderboard.to_html(
+        index=False,
+        escape=True,
+        classes="leaderboard",
+        border=0
+    )
+
+    # Use report.html as the HTML template
+    environment = Environment(
+        loader=FileSystemLoader(".")
+    )
+
+    template = environment.get_template("report.html")
+
+    html_output = template.render(
+        now=formatted_time,
+        time_zone="IST",
+        table=table,
+        total_participants=len(leaderboard),
+        total_badges=len(REQUIRED_BADGES),
+    )
+
+    # index.html is the public website entry point
+    with open("index.html", "w", encoding="utf-8") as file:
+        file.write(html_output)
+
+    print("Reports generated successfully!")
 
 
-def generate_report(result):
-    result = result[left_cols +
-                    [col for col in result.columns if col not in left_cols]]
-    required_column = left_cols + required_tasks
-    return result, result[required_column]
+# -----------------------------
+# MAIN
+# -----------------------------
+
+def main():
+
+    print("Starting GDGoC VC Cloud Leaderboard...")
+
+    data = read_google_sheet()
+
+    leaderboard = build_leaderboard(data)
+
+    generate_reports(leaderboard)
+
+    print("Leaderboard update completed!")
 
 
-def convert_to_x(row):
-    r = []
-    for index, value in row.items():
-        if index not in left_cols:
-            r.append("" if value is pd.NaT else "X")
-        else:
-            r.append(value)
-    return pd.Series(r, index=row.index)
-
-
-result = df.apply(get_tasks, axis=1)
-result.sort_values(by=['ID'], inplace=True)
-report_all, report_required = generate_report(result)
-
-result = result.apply(convert_to_x, axis=1)
-report_all_X, report_require_X = generate_report(result)
-
-# Create a Pandas Excel writer using XlsxWriter as the engine.
-writer = pd.ExcelWriter('report.xlsx', engine='xlsxwriter')
-
-non_mark_cols = ['ID', 'Public Profile', 'Finished', 'Complete All']
-
-# in report_require_X dataframe, except ID and Public Profile, if all other columns are X, then mark to a new completed column
-def get_completed(row):
-    for index, value in row.items():
-        if index not in non_mark_cols:
-            if value != "X":
-                return "No"
-    return "Yes"
-
-def count_X(row):
-    no_x = 0
-    for index, value in row.items():
-        if index not in non_mark_cols:
-            if value == "X":
-                no_x += 1
-    return no_x
-
-
-report_require_X = report_require_X.copy()
-report_require_X.loc[:, 'Finished'] = report_require_X.apply(
-    count_X, axis=1)
-report_require_X.loc[:, 'Complete All'] = report_require_X.apply(
-    get_completed, axis=1)
-
-# Reorder 'Complete All' and 'Finished' columns to the second column
-cols = list(report_require_X.columns)
-cols = [cols[0]] + [cols[-1]] + [cols[-2]] + cols[1:-2]
-report_require_X = report_require_X[cols]
-
-# Write each dataframe to a different worksheet.
-report_require_X.to_excel(writer, sheet_name='Required X')
-report_all_X.to_excel(writer, sheet_name='All X')
-report_required.to_excel(writer, sheet_name='Required Date')
-report_all.to_excel(writer, sheet_name='All Date')
-
-# Close the Pandas Excel writer and output the Excel file.
-writer.close()
-
-report_require_X.to_html("table.html")
-# Read report.html file and save to a variable
-table = open("table.html").read()
-template = env.get_template("report.html")
-
-# Get Hong kong time
-tz = pytz.timezone('Asia/Hong_Kong')
-datetime_HK = datetime.now(tz)
-# Render report.html with data
-report_html = template.render(
-    table=table, now=datetime_HK.strftime("%d/%m/%Y %H:%M:%S"), time_zone="Hong Kong")
-# save report.html
-with open("report.html", "w") as f:
-    f.write(report_html)
-# remove table.html
-os.remove("table.html")
-
-report_require_X.to_csv("report.csv")
+if __name__ == "__main__":
+    main()
