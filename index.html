@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>GDGoC VC | Cloud Leaderboard 2026–27</title>
 
     <style>
@@ -39,6 +41,27 @@
 
         header p {
             color: #5f6368;
+            line-height: 1.6;
+        }
+
+        .celebration-message {
+            text-align: center;
+            background: linear-gradient(135deg, #e8f0fe, #fce8ff, #fff4d6);
+            padding: 25px 18px;
+            margin-bottom: 22px;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .celebration-message h2 {
+            color: #1a73e8;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .celebration-message p {
+            color: #5f6368;
+            font-size: 15px;
             line-height: 1.6;
         }
 
@@ -112,6 +135,15 @@
             padding: 20px;
         }
 
+        #celebrationCanvas {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
         @media (max-width: 600px) {
             body {
                 padding: 12px;
@@ -123,6 +155,10 @@
 
             header h1 {
                 font-size: 22px;
+            }
+
+            .celebration-message h2 {
+                font-size: 20px;
             }
 
             .stats {
@@ -149,6 +185,19 @@
             Cloud Campaign 2026–27 | Learn. Build. Achieve.
         </p>
     </header>
+
+    <!-- Congratulations Message -->
+
+    <div class="celebration-message">
+        <h2>🎉 Congratulations to All Participants! 🎉</h2>
+        <p>
+            Your hard work, learning and achievements deserve to be celebrated!
+        </p>
+    </div>
+
+    <!-- Confetti Animation -->
+
+    <canvas id="celebrationCanvas"></canvas>
 
     <!-- Statistics -->
 
@@ -509,6 +558,17 @@
     </tr>
     <tr>
       <td>30</td>
+      <td>VC165</td>
+      <td>Thrupthi M</td>
+      <td>https://www.skills.google/public_profiles/c98940b9-99d2-4448-943a-1c7cf394f88e</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>31</td>
       <td>VC083</td>
       <td>Trshika Rai</td>
       <td>https://www.skills.google/public_profiles/d9c89c81-1107-40e4-83dd-16b87b828ee6</td>
@@ -519,7 +579,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>31</td>
+      <td>32</td>
       <td>VC130</td>
       <td>VIJETH</td>
       <td>https://www.skills.google/public_profiles/36def453-7e14-4f63-b5df-38b9e48a6683</td>
@@ -530,7 +590,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>32</td>
+      <td>33</td>
       <td>VC070</td>
       <td>Vaishak k</td>
       <td>https://www.skills.google/public_profiles/68a23334-c912-48ed-b953-13f6393db0ac</td>
@@ -541,7 +601,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>33</td>
+      <td>34</td>
       <td>VC014</td>
       <td>Varsha M</td>
       <td>https://www.skills.google/public_profiles/d1052f05-c890-40fe-93ab-7a7d7910a653</td>
@@ -552,7 +612,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>34</td>
+      <td>35</td>
       <td>VC051</td>
       <td>chashma p m</td>
       <td>https://www.skills.google/public_profiles/e2071ffb-1383-412f-8914-81a782cbf0e0</td>
@@ -563,7 +623,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>35</td>
+      <td>36</td>
       <td>VC009</td>
       <td>keerthi</td>
       <td>https://www.skills.google/public_profiles/bc6b54e7-c881-4126-b34f-e380941c6933</td>
@@ -574,7 +634,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>36</td>
+      <td>37</td>
       <td>VC093</td>
       <td>Manasvi Shetty K</td>
       <td>https://www.skills.google/public_profiles/b9afb233-3e2f-4b65-bbb7-9efc5e82e8fa</td>
@@ -585,7 +645,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>37</td>
+      <td>38</td>
       <td>VC068</td>
       <td>Sannidhi prabhu</td>
       <td>https://www.skills.google/public_profiles/6ed07797-2eb7-4f13-811f-e3cdbc1a2007</td>
@@ -596,7 +656,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>38</td>
+      <td>39</td>
       <td>VC041</td>
       <td>Dhanyashree</td>
       <td>https://www.skills.google/public_profiles/11a6da16-1419-41f4-afed-18f1da81571e</td>
@@ -607,7 +667,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>39</td>
+      <td>40</td>
       <td>VC145</td>
       <td>Manyashree</td>
       <td>https://www.skills.google/public_profiles/20b7c89e-2ff3-4cbc-998d-801e448f3b3a</td>
@@ -618,7 +678,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>40</td>
+      <td>41</td>
       <td>VC030</td>
       <td>Preksha</td>
       <td>https://www.skills.google/public_profiles/b0ee57be-894d-48c3-8a2b-bcbb3a44a86f</td>
@@ -629,7 +689,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>41</td>
+      <td>42</td>
       <td>VC027</td>
       <td>Rithika sri</td>
       <td>https://www.skills.google/public_profiles/49eccb5f-1853-43c8-966b-ed89273af3fc</td>
@@ -640,7 +700,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>42</td>
+      <td>43</td>
       <td>VC065</td>
       <td>Subhiksha</td>
       <td>https://www.skills.google/public_profiles/992492ac-0fcd-4695-9301-1d30e7207b02</td>
@@ -651,7 +711,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>43</td>
+      <td>44</td>
       <td>VC097</td>
       <td>Nishmitha K</td>
       <td>https://www.skills.google/public_profiles/6f9d7b3a-9e83-4874-907c-376ee79b319e</td>
@@ -662,7 +722,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>44</td>
+      <td>45</td>
       <td>VC099</td>
       <td>Dhanya</td>
       <td>https://www.skills.google/public_profiles/f1be5fb7-e242-4326-a40b-2be08c487de4</td>
@@ -673,7 +733,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>45</td>
+      <td>46</td>
       <td>VC058</td>
       <td>Rakshitha</td>
       <td>https://www.skills.google/public_profiles/11470808-d0c5-4188-814e-bbea616c9931</td>
@@ -684,7 +744,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>46</td>
+      <td>47</td>
       <td>VC057</td>
       <td>Deeksha</td>
       <td>https://www.skills.google/public_profiles/152f4927-66af-4774-8d57-4fdfb19d1aa7</td>
@@ -695,7 +755,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>47</td>
+      <td>48</td>
       <td>VC115</td>
       <td>GOWHITHA S</td>
       <td>https://www.skills.google/public_profiles/fec88a07-c9a6-496f-9dd4-ab3ee24b2d0e</td>
@@ -706,7 +766,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>48</td>
+      <td>49</td>
       <td>VC045</td>
       <td>Hithashree</td>
       <td>https://www.skills.google/public_profiles/28df657f-79ae-46d1-9f63-695051f5199d</td>
@@ -717,7 +777,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>49</td>
+      <td>50</td>
       <td>VC047</td>
       <td>Nishchitha</td>
       <td>https://www.skills.google/public_profiles/82132496-498c-478f-a2fb-af32618df774</td>
@@ -728,7 +788,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>50</td>
+      <td>51</td>
       <td>VC092</td>
       <td>Kushal M D</td>
       <td>https://www.skills.google/public_profiles/3da55fa1-0603-4108-9871-e35552053401</td>
@@ -739,7 +799,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>51</td>
+      <td>52</td>
       <td>VC101</td>
       <td>M S Pooja</td>
       <td>https://www.skills.google/public_profiles/8d72ce8e-b83d-46bc-add6-d227a95b2c9a</td>
@@ -750,7 +810,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>52</td>
+      <td>53</td>
       <td>VC078</td>
       <td>Prathyusha K U</td>
       <td>https://www.skills.google/public_profiles/6c47ec8f-4e65-4451-b5b2-be58e75956bb</td>
@@ -761,7 +821,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>53</td>
+      <td>54</td>
       <td>VC053</td>
       <td>Greeshma</td>
       <td>https://www.skills.google/public_profiles/a7712e6a-40fc-4eb0-ade0-9ef0ac84b660</td>
@@ -772,7 +832,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>54</td>
+      <td>55</td>
       <td>VC087</td>
       <td>Mahalasa Pai B</td>
       <td>https://www.skills.google/public_profiles/b2bb8cb6-38c3-41d6-aae1-950e5cbc27e3</td>
@@ -783,7 +843,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>55</td>
+      <td>56</td>
       <td>VC032</td>
       <td>Meghashree H K</td>
       <td>https://www.skills.google/public_profiles/35512a65-b45e-41dc-abc1-77fb7a317144</td>
@@ -794,7 +854,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>56</td>
+      <td>57</td>
       <td>VC173</td>
       <td>Bhavitha D S</td>
       <td>https://www.skills.google/public_profiles/ef6a0667-cce3-4217-b658-e43e62f5a0de</td>
@@ -805,7 +865,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>57</td>
+      <td>58</td>
       <td>VC071</td>
       <td>Chethana</td>
       <td>https://www.skills.google/public_profiles/103c9098-af7e-4c90-b519-aa40e53a4080</td>
@@ -816,7 +876,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>58</td>
+      <td>59</td>
       <td>VC110</td>
       <td>Kruthik B Rai</td>
       <td>https://www.skills.google/public_profiles/1d2370e1-caae-4eb7-b33b-505572a8f421</td>
@@ -827,7 +887,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>59</td>
+      <td>60</td>
       <td>VC069</td>
       <td>Ananya</td>
       <td>https://www.skills.google/public_profiles/0fbcc9dd-babc-493f-9166-c79ca7a351a5</td>
@@ -838,7 +898,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>60</td>
+      <td>61</td>
       <td>VC104</td>
       <td>Anusha K K</td>
       <td>https://www.skills.google/public_profiles/413ffbf9-118c-4713-aa52-dbcf5b606dc6</td>
@@ -849,7 +909,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>61</td>
+      <td>62</td>
       <td>VC061</td>
       <td>Chaithra C</td>
       <td>https://www.skills.google/public_profiles/c884188d-c5f3-4948-8b39-520d9abbe24b</td>
@@ -860,7 +920,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>62</td>
+      <td>63</td>
       <td>VC160</td>
       <td>Deepika</td>
       <td>https://www.skills.google/public_profiles/c6473697-d5bd-4415-90fe-4c7a8f24f44b</td>
@@ -871,7 +931,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>63</td>
+      <td>64</td>
       <td>VC128</td>
       <td>Gaurav c</td>
       <td>https://www.skills.google/public_profiles/68553449-70ad-4956-bd29-6586903f161d</td>
@@ -882,7 +942,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>64</td>
+      <td>65</td>
       <td>VC036</td>
       <td>Ishan H D</td>
       <td>https://www.skills.google/public_profiles/3f3f6a2c-2bb8-4b96-afbf-d6bfb4808843</td>
@@ -893,7 +953,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>65</td>
+      <td>66</td>
       <td>VC037</td>
       <td>Janani B G</td>
       <td>https://www.skills.google/public_profiles/08190980-ce8a-4388-aa9b-219efdb56867</td>
@@ -904,7 +964,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>66</td>
+      <td>67</td>
       <td>VC136</td>
       <td>Janani B S</td>
       <td>https://www.skills.google/public_profiles/86332775-2f3b-4d03-8caf-be7e285d4734</td>
@@ -915,7 +975,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>67</td>
+      <td>68</td>
       <td>VC008</td>
       <td>Pallavi R.P</td>
       <td>https://www.skills.google/public_profiles/5ba119b5-8a8a-47c2-a49f-e0cae5ab8809</td>
@@ -926,7 +986,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>68</td>
+      <td>69</td>
       <td>VC017</td>
       <td>Ranjan G</td>
       <td>https://www.skills.google/public_profiles/25194267-5ce2-4c49-9c43-4855141e4e82</td>
@@ -937,7 +997,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>69</td>
+      <td>70</td>
       <td>VC169</td>
       <td>Rishika</td>
       <td>https://www.skills.google/public_profiles/77c10a36-02e8-4c4e-9199-006d5e2e260c</td>
@@ -948,7 +1008,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>70</td>
+      <td>71</td>
       <td>VC060</td>
       <td>Sharanya</td>
       <td>https://www.skills.google/public_profiles/cfd7cad1-516b-4840-9365-dc3f931f00bf</td>
@@ -959,7 +1019,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>71</td>
+      <td>72</td>
       <td>VC168</td>
       <td>Siri Shenoy</td>
       <td>https://www.skills.google/public_profiles/e7f6af7d-05bc-47e9-8556-2d374af879ec</td>
@@ -970,7 +1030,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>72</td>
+      <td>73</td>
       <td>VC146</td>
       <td>Swasthi S Rai</td>
       <td>https://www.skills.google/public_profiles/4c0b65fe-d2b3-4cd3-a813-81687cf3c636</td>
@@ -981,21 +1041,10 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>73</td>
+      <td>74</td>
       <td>VC011</td>
       <td>Thanushree</td>
       <td>https://www.skills.google/public_profiles/7b4a2075-d0b5-4f2c-a1dc-e0023c7d2c95</td>
-      <td>1</td>
-      <td>10%</td>
-      <td>The Basics of Google Cloud Compute</td>
-      <td>No Milestone</td>
-      <td>Not applicable</td>
-    </tr>
-    <tr>
-      <td>74</td>
-      <td>VC165</td>
-      <td>Thrupthi M</td>
-      <td>https://www.skills.google/public_profiles/c98940b9-99d2-4448-943a-1c7cf394f88e</td>
       <td>1</td>
       <td>10%</td>
       <td>The Basics of Google Cloud Compute</td>
@@ -2216,16 +2265,15 @@
 </div>
 
 <script>
+    // LEADERBOARD
 
     const table = document.querySelector(".leaderboard");
 
     if (table) {
-
         const headerRow = table.querySelector("thead tr");
         const tbody = table.querySelector("tbody");
 
         if (headerRow && tbody) {
-
             const headers = Array.from(headerRow.querySelectorAll("th"));
 
             const findColumn = (name) =>
@@ -2239,53 +2287,185 @@
 
             if (rankIndex !== -1 && nameIndex !== -1 && badgesIndex !== -1) {
 
+                const keepIndexes = [rankIndex, nameIndex, badgesIndex];
+
                 const rows = Array.from(tbody.querySelectorAll("tr"));
 
-                // Sort by badges completed, highest first.
+                // Sort by badge count, highest first.
 
                 rows.sort((a, b) => {
-                    const badgesA = parseInt(a.cells[badgesIndex].textContent) || 0;
-                    const badgesB = parseInt(b.cells[badgesIndex].textContent) || 0;
-
+                    const badgesA = parseInt(a.cells[badgesIndex]?.textContent) || 0;
+                    const badgesB = parseInt(b.cells[badgesIndex]?.textContent) || 0;
                     return badgesB - badgesA;
                 });
 
-                // Display only Rank, Name and Badges Completed.
+                // Keep only the required columns and assign ranks.
 
-                const keepIndexes = [rankIndex, nameIndex, badgesIndex];
+                headerRow.replaceChildren(
+                    ...keepIndexes.map(index => headers[index])
+                );
 
-                headers.forEach((header, index) => {
-                    if (!keepIndexes.includes(index)) {
-                        header.remove();
-                    }
-                });
+                headerRow.cells[1].textContent = "Name";
 
                 rows.forEach((row, index) => {
-
                     const cells = Array.from(row.children);
 
-                    cells.forEach((cell, cellIndex) => {
-                        if (!keepIndexes.includes(cellIndex)) {
-                            cell.remove();
-                        }
-                    });
-
-                    // Assign rank automatically.
+                    row.replaceChildren(
+                        ...keepIndexes.map(columnIndex => cells[columnIndex])
+                    );
 
                     row.cells[0].textContent = index + 1;
 
                     tbody.appendChild(row);
                 });
 
-                // Change Display Name heading to Name.
-
-                headerRow.cells[1].textContent = "Name";
-
             } else {
                 console.error("Required leaderboard columns were not found.");
             }
         }
     }
+
+    // CELEBRATION CONFETTI AND SPARKLES
+
+    (function () {
+        const canvas = document.getElementById("celebrationCanvas");
+
+        if (!canvas) return;
+
+        const ctx = canvas.getContext("2d");
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            canvas.style.display = "none";
+            return;
+        }
+
+        let particles = [];
+        let startTime;
+        let animationFrame;
+
+        const colors = [
+            "#4285F4",
+            "#EA4335",
+            "#FBBC05",
+            "#34A853",
+            "#A142F4",
+            "#FF69B4",
+            "#00BCD4",
+            "#FF8C42"
+        ];
+
+        function resizeCanvas() {
+            const dpr = window.devicePixelRatio || 1;
+
+            canvas.width = window.innerWidth * dpr;
+            canvas.height = window.innerHeight * dpr;
+
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+
+        function createParticle() {
+            return {
+                x: Math.random() * window.innerWidth,
+                y: -20 - Math.random() * window.innerHeight,
+                size: Math.random() * 7 + 3,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                speedY: Math.random() * 3 + 2,
+                speedX: Math.random() * 2 - 1,
+                rotation: Math.random() * 360,
+                rotationSpeed: Math.random() * 8 - 4,
+                sparkle: Math.random() > 0.7
+            };
+        }
+
+        function drawSparkle(x, y, size, color) {
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(-size, 0);
+            ctx.lineTo(size, 0);
+            ctx.moveTo(0, -size);
+            ctx.lineTo(0, size);
+            ctx.stroke();
+            ctx.restore();
+        }
+
+        function startCelebration() {
+            resizeCanvas();
+
+            particles = Array.from(
+                { length: 160 },
+                createParticle
+            );
+
+            startTime = performance.now();
+
+            function animate(time) {
+                const elapsed = time - startTime;
+
+                ctx.clearRect(
+                    0,
+                    0,
+                    window.innerWidth,
+                    window.innerHeight
+                );
+
+                particles.forEach(particle => {
+                    particle.x += particle.speedX;
+                    particle.y += particle.speedY;
+                    particle.rotation += particle.rotationSpeed;
+
+                    ctx.save();
+
+                    ctx.translate(particle.x, particle.y);
+                    ctx.rotate(particle.rotation * Math.PI / 180);
+                    ctx.fillStyle = particle.color;
+
+                    if (particle.sparkle) {
+                        drawSparkle(
+                            0, 0,
+                            particle.size,
+                            particle.color
+                        );
+                    } else {
+                        ctx.fillRect(
+                            -particle.size / 2,
+                            -particle.size / 2,
+                            particle.size,
+                            particle.size * 1.5
+                        );
+                    }
+
+                    ctx.restore();
+                });
+
+                if (elapsed < 5000) {
+                    animationFrame = requestAnimationFrame(animate);
+                } else {
+                    cancelAnimationFrame(animationFrame);
+
+                    ctx.clearRect(
+                        0,
+                        0,
+                        window.innerWidth,
+                        window.innerHeight
+                    );
+
+                    canvas.style.display = "none";
+                }
+            }
+
+            animationFrame = requestAnimationFrame(animate);
+        }
+
+        window.addEventListener("resize", resizeCanvas);
+
+        // Start automatically when the page opens.
+
+        startCelebration();
+
+    })();
 
 </script>
 
