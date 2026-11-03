@@ -1,0 +1,2363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GDGoC VC | Cloud Leaderboard 2026–27</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #202124;
+            padding: 25px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 22px;
+            border: 1px solid #e5e7eb;
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #5f6368;
+            line-height: 1.6;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .stat-card h2 {
+            font-size: 30px;
+            margin-bottom: 6px;
+            color: #1a73e8;
+        }
+
+        .stat-card p {
+            color: #5f6368;
+        }
+
+        .section {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .section h2 {
+            margin-bottom: 18px;
+            font-size: 21px;
+        }
+
+        .podium {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .podium-card {
+            text-align: center;
+            padding: 20px 10px;
+            background: #f5f7fb;
+            border-radius: 12px;
+            overflow-wrap: anywhere;
+        }
+
+        .podium-card .medal {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .podium-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .podium-card p {
+            color: #5f6368;
+            font-size: 14px;
+        }
+
+        .search {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #dadce0;
+            border-radius: 9px;
+            font-size: 15px;
+            margin-bottom: 18px;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 750px;
+        }
+
+        th, td {
+            padding: 14px 12px;
+            text-align: left;
+            border-bottom: 1px solid #eeeeee;
+            font-size: 14px;
+        }
+
+        th {
+            background: #f1f3f4;
+            color: #3c4043;
+        }
+
+        tr:hover td {
+            background: #f8faff;
+        }
+
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            color: #777;
+            font-size: 13px;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            header {
+                padding: 22px;
+            }
+
+            header h1 {
+                font-size: 22px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .podium {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>☁️ GDGoC VC Cloud Leaderboard</h1>
+        <p>
+            Google Developer Groups on Campus – Vivekananda College
+        </p>
+        <p>
+            Cloud Campaign 2026–27 | Learn. Build. Achieve.
+        </p>
+        <p style="margin-top: 12px;">
+            Last updated: <strong>03 November 2026, 09:20 PM IST</strong>
+        </p>
+    </header>
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <h2>183</h2>
+            <p>Total Participants</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>10</h2>
+            <p>Skill Badges to Complete</p>
+        </div>
+
+    </div>
+
+    <section class="section">
+        <h2>🏆 Top 3 Participants</h2>
+        <div class="podium" id="podium">
+            <p>Loading leaderboard...</p>
+        </div>
+    </section>
+
+    <section class="section">
+
+        <h2>📊 Complete Leaderboard</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            class="search"
+            placeholder="Search by participant name or ID..."
+        >
+
+        <div class="table-wrapper">
+            <table class="dataframe leaderboard">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Rank</th>
+      <th>Participant ID</th>
+      <th>Display Name</th>
+      <th>Public Profile URL</th>
+      <th>Badges Completed</th>
+      <th>Progress</th>
+      <th>Completed Skill Badges</th>
+      <th>Milestone Completed</th>
+      <th>GEAR Digital Badges</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>VC074</td>
+      <td>A Prajna shetty</td>
+      <td>https://www.skills.google/public_profiles/85ec6eac-a346-4c81-b158-e2ca6391d297</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>VC081</td>
+      <td>Adithi L</td>
+      <td>https://www.skills.google/public_profiles/3b0035b2-edf3-4342-98a8-7493942a3a4d</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 2</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>VC025</td>
+      <td>B Gurukiran</td>
+      <td>https://www.skills.google/public_profiles/13790e76-1a37-4249-b052-778c819bb0b5</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 2</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>VC015</td>
+      <td>Chethan</td>
+      <td>https://www.skills.google/public_profiles/48fc944a-577b-4d81-9501-68ae59cdfe38</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>VC016</td>
+      <td>Ganya M</td>
+      <td>https://www.skills.google/public_profiles/236eb044-a510-4de8-8658-f764ad248ae8</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>VC144</td>
+      <td>Hithashree</td>
+      <td>https://www.skills.google/public_profiles/0d6b310d-99cf-40bd-b16e-63a9f3661ee0</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>VC052</td>
+      <td>Jeevith.k</td>
+      <td>https://www.skills.google/public_profiles/7196ca71-5fc1-43a3-bb91-fda43dc89de7</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>VC048</td>
+      <td>K.Deepika Prabhu</td>
+      <td>https://www.skills.google/public_profiles/5d3a4459-92a4-43bc-940d-23f9e2c4d1c5</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>VC024</td>
+      <td>Keerthan</td>
+      <td>https://www.skills.google/public_profiles/513f965f-ff8f-4500-8818-a59a03262fbe</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>VC043</td>
+      <td>Lakshyajith K S</td>
+      <td>https://www.skills.google/public_profiles/5fe32d7f-764b-4045-b318-29db6131a4ae</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>VC067</td>
+      <td>Likhitha rai</td>
+      <td>https://www.skills.google/public_profiles/44c60454-4946-43dc-a29e-68fd34e5382e</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>VC063</td>
+      <td>MAHIMA P ACHARYA</td>
+      <td>https://www.skills.google/public_profiles/26c87720-7588-42cc-8994-e592bbc5cd7b</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>VC026</td>
+      <td>Manvith</td>
+      <td>https://www.skills.google/public_profiles/3717b0b1-4113-41d8-9f36-9149bf36c392</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 2</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>VC021</td>
+      <td>Nihali Naik</td>
+      <td>https://www.skills.google/public_profiles/97de0ea9-8a33-4f57-84d3-95dbace9dcde</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>VC034</td>
+      <td>Nishanth N M</td>
+      <td>https://www.skills.google/public_profiles/d9489426-4eb3-4f65-9dbe-98fabd5cdd36</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>VC066</td>
+      <td>PRANAM K</td>
+      <td>https://www.skills.google/public_profiles/4f5ca5fd-ac8a-43f3-b91b-262c5a7e1d3b</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 1</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>VC129</td>
+      <td>Prakrithi CH</td>
+      <td>https://www.skills.google/public_profiles/c681f85a-1a7c-4892-acda-f1d38e80eb61</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>VC022</td>
+      <td>Pramitha Manila</td>
+      <td>https://www.skills.google/public_profiles/b07c1d8c-ca68-4972-bee8-7e88752a72b7</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>VC007</td>
+      <td>Preethitha</td>
+      <td>https://www.skills.google/public_profiles/547c90fd-db3b-4227-bd42-df3348d6e74d</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>VC091</td>
+      <td>Preethitha TM</td>
+      <td>https://www.skills.google/public_profiles/29791f5f-bac5-4e9d-b306-8eab3388247e</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>VC100</td>
+      <td>Roopali</td>
+      <td>https://www.skills.google/public_profiles/1d383a6f-ba45-4811-96c0-766731d27a41</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>VC028</td>
+      <td>Savitha</td>
+      <td>https://www.skills.google/public_profiles/85f547b1-308f-480a-b683-4d7567a81dc3</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>VC044</td>
+      <td>Sharath</td>
+      <td>https://www.skills.google/public_profiles/dbc067c0-512d-4e42-8292-dca0abbd655a</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>VC019</td>
+      <td>Shravya H B</td>
+      <td>https://www.skills.google/public_profiles/fb747f80-8f61-4808-af82-5949a8b80f42</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>VC023</td>
+      <td>Sinchana B</td>
+      <td>https://www.skills.google/public_profiles/cccff47e-dde5-488e-aabb-11f316d8d936</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>VC050</td>
+      <td>Srishti</td>
+      <td>https://www.skills.google/public_profiles/3bc5cd97-c0d4-4cfe-b7dc-e52446f7842c</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>VC084</td>
+      <td>Sthuthi Rai</td>
+      <td>https://www.skills.google/public_profiles/2fbda77b-ce58-4168-ac29-db04f697a4a3</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>VC018</td>
+      <td>Susha</td>
+      <td>https://www.skills.google/public_profiles/76cba41b-164d-4eb1-9685-051a099841d2</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>VC010</td>
+      <td>Theeksha J</td>
+      <td>https://www.skills.google/public_profiles/366c7df4-37cd-414a-9427-4407ef66a4e3</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>VC083</td>
+      <td>Trshika Rai</td>
+      <td>https://www.skills.google/public_profiles/d9c89c81-1107-40e4-83dd-16b87b828ee6</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>VC130</td>
+      <td>VIJETH</td>
+      <td>https://www.skills.google/public_profiles/36def453-7e14-4f63-b5df-38b9e48a6683</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>VC070</td>
+      <td>Vaishak k</td>
+      <td>https://www.skills.google/public_profiles/68a23334-c912-48ed-b953-13f6393db0ac</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>VC014</td>
+      <td>Varsha M</td>
+      <td>https://www.skills.google/public_profiles/d1052f05-c890-40fe-93ab-7a7d7910a653</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>VC051</td>
+      <td>chashma p m</td>
+      <td>https://www.skills.google/public_profiles/e2071ffb-1383-412f-8914-81a782cbf0e0</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 1</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>VC009</td>
+      <td>keerthi</td>
+      <td>https://www.skills.google/public_profiles/bc6b54e7-c881-4126-b34f-e380941c6933</td>
+      <td>10</td>
+      <td>100%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 3</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>VC093</td>
+      <td>Manasvi Shetty K</td>
+      <td>https://www.skills.google/public_profiles/b9afb233-3e2f-4b65-bbb7-9efc5e82e8fa</td>
+      <td>9</td>
+      <td>90%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 2</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>VC068</td>
+      <td>Sannidhi prabhu</td>
+      <td>https://www.skills.google/public_profiles/6ed07797-2eb7-4f13-811f-e3cdbc1a2007</td>
+      <td>9</td>
+      <td>90%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 2</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>VC041</td>
+      <td>Dhanyashree</td>
+      <td>https://www.skills.google/public_profiles/11a6da16-1419-41f4-afed-18f1da81571e</td>
+      <td>8</td>
+      <td>80%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API</td>
+      <td>Milestone 2</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>VC145</td>
+      <td>Manyashree</td>
+      <td>https://www.skills.google/public_profiles/20b7c89e-2ff3-4cbc-998d-801e448f3b3a</td>
+      <td>8</td>
+      <td>80%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Using the Google Cloud Speech API</td>
+      <td>Milestone 2</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>VC030</td>
+      <td>Preksha</td>
+      <td>https://www.skills.google/public_profiles/b0ee57be-894d-48c3-8a2b-bcbb3a44a86f</td>
+      <td>8</td>
+      <td>80%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API</td>
+      <td>Milestone 2</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>VC027</td>
+      <td>Rithika sri</td>
+      <td>https://www.skills.google/public_profiles/49eccb5f-1853-43c8-966b-ed89273af3fc</td>
+      <td>8</td>
+      <td>80%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API</td>
+      <td>Milestone 2</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>42</td>
+      <td>VC065</td>
+      <td>Subhiksha</td>
+      <td>https://www.skills.google/public_profiles/992492ac-0fcd-4695-9301-1d30e7207b02</td>
+      <td>8</td>
+      <td>80%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 2</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td>VC165</td>
+      <td>Thrupthi M</td>
+      <td>https://www.skills.google/public_profiles/c98940b9-99d2-4448-943a-1c7cf394f88e</td>
+      <td>8</td>
+      <td>80%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td>VC097</td>
+      <td>Nishmitha K</td>
+      <td>https://www.skills.google/public_profiles/6f9d7b3a-9e83-4874-907c-376ee79b319e</td>
+      <td>7</td>
+      <td>70%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application</td>
+      <td>Milestone 1</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td>VC099</td>
+      <td>Dhanya</td>
+      <td>https://www.skills.google/public_profiles/f1be5fb7-e242-4326-a40b-2be08c487de4</td>
+      <td>6</td>
+      <td>60%</td>
+      <td>Configure Service Accounts and IAM Roles for Google Cloud, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 2</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>46</td>
+      <td>VC057</td>
+      <td>Deeksha</td>
+      <td>https://www.skills.google/public_profiles/152f4927-66af-4774-8d57-4fdfb19d1aa7</td>
+      <td>5</td>
+      <td>50%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Develop AI-Powered Prototypes in Google AI Studio, Build a Website on Google Cloud, Store, Process, and Manage Data on Google Cloud - Console</td>
+      <td>Milestone 2</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>47</td>
+      <td>VC115</td>
+      <td>GOWHITHA S</td>
+      <td>https://www.skills.google/public_profiles/fec88a07-c9a6-496f-9dd4-ab3ee24b2d0e</td>
+      <td>5</td>
+      <td>50%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API</td>
+      <td>Milestone 2</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>48</td>
+      <td>VC045</td>
+      <td>Hithashree</td>
+      <td>https://www.skills.google/public_profiles/28df657f-79ae-46d1-9f63-695051f5199d</td>
+      <td>5</td>
+      <td>50%</td>
+      <td>The Basics of Google Cloud Compute, Implement Speech and Language Solutions with Pre-trained APIs, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>49</td>
+      <td>VC047</td>
+      <td>Nishchitha</td>
+      <td>https://www.skills.google/public_profiles/82132496-498c-478f-a2fb-af32618df774</td>
+      <td>5</td>
+      <td>50%</td>
+      <td>The Basics of Google Cloud Compute, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Build a Website on Google Cloud, Store, Process, and Manage Data on Google Cloud - Console</td>
+      <td>Milestone 2</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>VC058</td>
+      <td>Rakshitha</td>
+      <td>https://www.skills.google/public_profiles/11470808-d0c5-4188-814e-bbea616c9931</td>
+      <td>5</td>
+      <td>50%</td>
+      <td>The Basics of Google Cloud Compute, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 1</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>51</td>
+      <td>VC092</td>
+      <td>Kushal M D</td>
+      <td>https://www.skills.google/public_profiles/3da55fa1-0603-4108-9871-e35552053401</td>
+      <td>4</td>
+      <td>40%</td>
+      <td>Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 1</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>52</td>
+      <td>VC101</td>
+      <td>M S Pooja</td>
+      <td>https://www.skills.google/public_profiles/8d72ce8e-b83d-46bc-add6-d227a95b2c9a</td>
+      <td>4</td>
+      <td>40%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>53</td>
+      <td>VC078</td>
+      <td>Prathyusha K U</td>
+      <td>https://www.skills.google/public_profiles/6c47ec8f-4e65-4451-b5b2-be58e75956bb</td>
+      <td>4</td>
+      <td>40%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio</td>
+      <td>Milestone 1</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>54</td>
+      <td>VC053</td>
+      <td>Greeshma</td>
+      <td>https://www.skills.google/public_profiles/a7712e6a-40fc-4eb0-ade0-9ef0ac84b660</td>
+      <td>3</td>
+      <td>30%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Create Your First Gemini Enterprise Application</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>55</td>
+      <td>VC087</td>
+      <td>Mahalasa Pai B</td>
+      <td>https://www.skills.google/public_profiles/b2bb8cb6-38c3-41d6-aae1-950e5cbc27e3</td>
+      <td>3</td>
+      <td>30%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs</td>
+      <td>Milestone 1</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>56</td>
+      <td>VC032</td>
+      <td>Meghashree H K</td>
+      <td>https://www.skills.google/public_profiles/35512a65-b45e-41dc-abc1-77fb7a317144</td>
+      <td>3</td>
+      <td>30%</td>
+      <td>The Basics of Google Cloud Compute, Develop AI-Powered Prototypes in Google AI Studio, Create Your First Gemini Enterprise Application</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>57</td>
+      <td>VC173</td>
+      <td>Bhavitha D S</td>
+      <td>https://www.skills.google/public_profiles/ef6a0667-cce3-4217-b658-e43e62f5a0de</td>
+      <td>2</td>
+      <td>20%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>58</td>
+      <td>VC071</td>
+      <td>Chethana</td>
+      <td>https://www.skills.google/public_profiles/103c9098-af7e-4c90-b519-aa40e53a4080</td>
+      <td>2</td>
+      <td>20%</td>
+      <td>The Basics of Google Cloud Compute, Implement Speech and Language Solutions with Pre-trained APIs</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>59</td>
+      <td>VC110</td>
+      <td>Kruthik B Rai</td>
+      <td>https://www.skills.google/public_profiles/1d2370e1-caae-4eb7-b33b-505572a8f421</td>
+      <td>2</td>
+      <td>20%</td>
+      <td>The Basics of Google Cloud Compute, Implement Speech and Language Solutions with Pre-trained APIs</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>VC069</td>
+      <td>Ananya</td>
+      <td>https://www.skills.google/public_profiles/0fbcc9dd-babc-493f-9166-c79ca7a351a5</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>The Basics of Google Cloud Compute</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>61</td>
+      <td>VC104</td>
+      <td>Anusha K K</td>
+      <td>https://www.skills.google/public_profiles/413ffbf9-118c-4713-aa52-dbcf5b606dc6</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>The Basics of Google Cloud Compute</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>62</td>
+      <td>VC061</td>
+      <td>Chaithra C</td>
+      <td>https://www.skills.google/public_profiles/c884188d-c5f3-4948-8b39-520d9abbe24b</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>The Basics of Google Cloud Compute</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>63</td>
+      <td>VC160</td>
+      <td>Deepika</td>
+      <td>https://www.skills.google/public_profiles/c6473697-d5bd-4415-90fe-4c7a8f24f44b</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>The Basics of Google Cloud Compute</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>64</td>
+      <td>VC128</td>
+      <td>Gaurav c</td>
+      <td>https://www.skills.google/public_profiles/68553449-70ad-4956-bd29-6586903f161d</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>The Basics of Google Cloud Compute</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>65</td>
+      <td>VC036</td>
+      <td>Ishan H D</td>
+      <td>https://www.skills.google/public_profiles/3f3f6a2c-2bb8-4b96-afbf-d6bfb4808843</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>The Basics of Google Cloud Compute</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>66</td>
+      <td>VC136</td>
+      <td>Janani B S</td>
+      <td>https://www.skills.google/public_profiles/86332775-2f3b-4d03-8caf-be7e285d4734</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>The Basics of Google Cloud Compute</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>67</td>
+      <td>VC008</td>
+      <td>Pallavi R.P</td>
+      <td>https://www.skills.google/public_profiles/5ba119b5-8a8a-47c2-a49f-e0cae5ab8809</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>The Basics of Google Cloud Compute</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>68</td>
+      <td>VC017</td>
+      <td>Ranjan G</td>
+      <td>https://www.skills.google/public_profiles/25194267-5ce2-4c49-9c43-4855141e4e82</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>Explore Generative AI in Agent Platform</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>69</td>
+      <td>VC169</td>
+      <td>Rishika</td>
+      <td>https://www.skills.google/public_profiles/77c10a36-02e8-4c4e-9199-006d5e2e260c</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>The Basics of Google Cloud Compute</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>70</td>
+      <td>VC060</td>
+      <td>Sharanya</td>
+      <td>https://www.skills.google/public_profiles/cfd7cad1-516b-4840-9365-dc3f931f00bf</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>Create Your First Gemini Enterprise Application</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>71</td>
+      <td>VC168</td>
+      <td>Siri Shenoy</td>
+      <td>https://www.skills.google/public_profiles/e7f6af7d-05bc-47e9-8556-2d374af879ec</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>The Basics of Google Cloud Compute</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>72</td>
+      <td>VC146</td>
+      <td>Swasthi S Rai</td>
+      <td>https://www.skills.google/public_profiles/4c0b65fe-d2b3-4cd3-a813-81687cf3c636</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>The Basics of Google Cloud Compute</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>73</td>
+      <td>VC011</td>
+      <td>Thanushree</td>
+      <td>https://www.skills.google/public_profiles/7b4a2075-d0b5-4f2c-a1dc-e0023c7d2c95</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>The Basics of Google Cloud Compute</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>74</td>
+      <td>VC095</td>
+      <td>Yashaswi S M</td>
+      <td>https://www.skills.google/public_profiles/cb98763c-73d2-491b-afca-b212a433ab18</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>The Basics of Google Cloud Compute</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>VC148</td>
+      <td>A.V.Pooja</td>
+      <td>https://www.skills.google/public_profiles/d52b4d1f-b885-4dd1-ac2b-e54cf308ef51</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>76</td>
+      <td>VC183</td>
+      <td>ABNEESH KUMAR SHARMA</td>
+      <td>https://www.skills.google/public_profiles/7f4504c3-c8fd-411f-be0d-a386989d18e4</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>No Badge</td>
+    </tr>
+    <tr>
+      <td>77</td>
+      <td>VC111</td>
+      <td>Akash rai</td>
+      <td>https://www.skills.google/public_profiles/208fefac-0317-47b2-b985-d9da3dda37b6</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>78</td>
+      <td>VC156</td>
+      <td>Akshitha</td>
+      <td>https://www.skills.google/public_profiles/5492a1fb-7614-494c-9511-d58e611cb073</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>79</td>
+      <td>VC126</td>
+      <td>Akshitha m c</td>
+      <td>https://www.skills.google/public_profiles/289a4545-67c4-48bf-8c7d-0a070d70236d</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>80</td>
+      <td>VC123</td>
+      <td>Ananya</td>
+      <td>https://www.skills.google/public_profiles/071a9f9e-1ec4-49a0-a8d1-967fb606daf0</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>81</td>
+      <td>VC004</td>
+      <td>Anushree</td>
+      <td>https://www.skills.google/public_profiles/94a9249e-4e32-4507-beab-fb8917d9390e</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>82</td>
+      <td>VC131</td>
+      <td>Anushree</td>
+      <td>https://www.skills.google/public_profiles/7896a6e2-c861-47d8-ab17-e162028a0079</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>83</td>
+      <td>VC114</td>
+      <td>Anvitha A R</td>
+      <td>https://www.skills.google/public_profiles/e44f9d78-a753-4232-8dd0-883677ccaeba</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>84</td>
+      <td>VC102</td>
+      <td>Apeksha</td>
+      <td>https://www.skills.google/public_profiles/3557d9c0-1af2-43a6-b354-70bc4c8a870a</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>85</td>
+      <td>VC035</td>
+      <td>B R Chinthan Kumar</td>
+      <td>https://www.skills.google/public_profiles/8bdaf159-f465-473c-85d7-dbeb598f531d</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>86</td>
+      <td>VC167</td>
+      <td>B.Namitha</td>
+      <td>https://www.skills.google/public_profiles/a216fb9e-8233-44f9-80b9-e86fb8e7093c</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>87</td>
+      <td>VC062</td>
+      <td>Bhuvanesh</td>
+      <td>https://www.skills.google/public_profiles/bb7284a7-8cb7-4e3f-9cfa-805dbad13332</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>88</td>
+      <td>VC157</td>
+      <td>Chaithanya</td>
+      <td>https://www.skills.google/public_profiles/16d4fb4d-cee1-4b90-b335-a5146569d139</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>89</td>
+      <td>VC029</td>
+      <td>Chaithra</td>
+      <td>https://www.skills.google/public_profiles/dfca916b-b5e8-4191-9f3b-fb41518f94a5</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>VC152</td>
+      <td>Chinthana N</td>
+      <td>https://www.skills.google/public_profiles/7466b31b-98bf-4766-8311-3c6e2b4c6829</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>91</td>
+      <td>VC012</td>
+      <td>Deeksha</td>
+      <td>https://www.skills.google/public_profiles/3f8cf238-eb32-4f53-89ca-3602eb7c0e56</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>92</td>
+      <td>VC139</td>
+      <td>Deekshith kumar A</td>
+      <td>https://www.skills.google/public_profiles/99780072-a838-45bc-928c-1cbddc36cb9c</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>93</td>
+      <td>VC182</td>
+      <td>Dhanish Amin</td>
+      <td>https://www.skills.google/public_profiles/d37fd2ff-301d-479a-845f-404bd496a620</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>94</td>
+      <td>VC159</td>
+      <td>Dhrithi T P</td>
+      <td>https://www.skills.google/public_profiles/b8f9e04c-bd32-4159-8528-4d409c9c0dec</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>95</td>
+      <td>VC013</td>
+      <td>Disha K</td>
+      <td>https://www.skills.google/public_profiles/4b32a07b-bf8d-4a29-a1af-200a10422a36</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>96</td>
+      <td>VC132</td>
+      <td>Divya K S</td>
+      <td>https://www.skills.google/public_profiles/1d829fae-0d51-4970-83a7-3836a96418bc</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>97</td>
+      <td>VC072</td>
+      <td>Dravyashree rai</td>
+      <td>https://www.skills.google/public_profiles/19ef88b8-da9e-4b02-af55-063540ae7af7</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>98</td>
+      <td>VC049</td>
+      <td>Gagan p</td>
+      <td>https://www.skills.google/public_profiles/6cb4c327-4c61-4801-abf2-b7ee67ba09b2</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>99</td>
+      <td>VC003</td>
+      <td>Gagana</td>
+      <td>https://www.skills.google/public_profiles/3302d942-c27c-4316-89e9-4e72cb86aefe</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>100</td>
+      <td>VC106</td>
+      <td>Harsha P</td>
+      <td>https://www.skills.google/public_profiles/34ed3124-7b64-4a95-b0ea-2fe90423fdc3</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>101</td>
+      <td>VC079</td>
+      <td>Harshith p rai</td>
+      <td>https://www.skills.google/public_profiles/d23943e8-30b0-47be-b9ca-3cefd0deb5c5</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>102</td>
+      <td>VC118</td>
+      <td>Hithesh</td>
+      <td>https://www.skills.google/public_profiles/478e26d2-4698-4584-91ce-907b6970d189</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>103</td>
+      <td>VC037</td>
+      <td>Janani B G</td>
+      <td>https://www.skills.google/public_profiles/08190980-ce8a-4388-aa9b-219efdb56867</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>104</td>
+      <td>VC094</td>
+      <td>Janani B S</td>
+      <td>https://www.skills.google/public_profiles/4c94c8cf-7f6d-4c92-8a11-77c39e26ca94</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>105</td>
+      <td>VC127</td>
+      <td>Jeshma</td>
+      <td>https://www.skills.google/public_profiles/e2cb289b-387b-4eee-9a57-1212323e9d90</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>106</td>
+      <td>VC121</td>
+      <td>Jithesh Kumar</td>
+      <td>https://www.skills.google/public_profiles/1b4cd55d-38aa-4c11-b4c6-36fcbfc683b6</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>107</td>
+      <td>VC090</td>
+      <td>Jithesh.N</td>
+      <td>https://www.skills.google/public_profiles/1d177d6c-a604-4ef4-a865-25746c77271a</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>108</td>
+      <td>VC135</td>
+      <td>Jyothi</td>
+      <td>https://www.skills.google/public_profiles/c3ffcce5-e3fd-478d-a54b-5a3a3d8c4298</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>109</td>
+      <td>VC113</td>
+      <td>K Pavithra</td>
+      <td>https://www.skills.google/public_profiles/efed39d0-5405-4348-a3f5-ca7ced3bc685</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>110</td>
+      <td>VC005</td>
+      <td>Karan shetty</td>
+      <td>https://www.skills.google/public_profiles/4169fb6b-2cf6-453b-acb5-47eb71c48014</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>111</td>
+      <td>VC151</td>
+      <td>Keerthan A</td>
+      <td>https://www.skills.google/public_profiles/67e8cd6c-deab-4d72-8cfa-54801e0f6581</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>112</td>
+      <td>VC142</td>
+      <td>Keerthan P</td>
+      <td>https://www.skills.google/public_profiles/ebcf4fc4-7979-4ddf-ae40-5a673c51779b</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>113</td>
+      <td>VC075</td>
+      <td>Keerthana</td>
+      <td>https://www.skills.google/public_profiles/cdd60629-3ea4-4824-9600-8a80ac75363c</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>114</td>
+      <td>VC171</td>
+      <td>Kowshik.M</td>
+      <td>https://www.skills.google/public_profiles/4c0d9237-e1b8-439b-a57b-2165a9b2b3c5</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>115</td>
+      <td>VC040</td>
+      <td>Kruthik B Rai</td>
+      <td>https://www.skills.google/public_profiles/67e9e81e-f981-4fad-aa88-e332a10019f3</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>116</td>
+      <td>VC153</td>
+      <td>Kruthika NS</td>
+      <td>https://www.skills.google/public_profiles/93c9f1ff-c205-4fe3-b4d5-5ccbeb6bb639</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>117</td>
+      <td>VC038</td>
+      <td>Kshama N S</td>
+      <td>https://www.skills.google/public_profiles/3afc4106-8e5f-4ab2-be04-e99698b690b8</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>118</td>
+      <td>VC076</td>
+      <td>Kshira M</td>
+      <td>https://www.skills.google/public_profiles/3c317837-197c-4701-9496-383f900e35f6</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>119</td>
+      <td>VC116</td>
+      <td>Kushika D</td>
+      <td>https://www.skills.google/public_profiles/ff9d9fbe-f5d7-430c-8929-fe0aee806391</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>120</td>
+      <td>VC108</td>
+      <td>Kushith K</td>
+      <td>https://www.skills.google/public_profiles/769e65d4-c03a-4d8a-9e32-e34ffe55fbfb</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>121</td>
+      <td>VC109</td>
+      <td>Kushith K</td>
+      <td>https://www.skills.google/public_profiles/4f1c6675-cb01-4923-be5c-8473f864956b</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>122</td>
+      <td>VC155</td>
+      <td>Lavanya K</td>
+      <td>https://www.skills.google/public_profiles/9ca0e78e-033e-4eae-8024-71b4ad70b7fe</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>VC143</td>
+      <td>Likhith kumar</td>
+      <td>https://www.skills.google/public_profiles/cb5500e3-24c8-4748-9b5b-1bbceedf9adb</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>124</td>
+      <td>VC103</td>
+      <td>Manasa</td>
+      <td>https://www.skills.google/public_profiles/075f56ac-f72e-4522-b18c-0dde4c7d1783</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>125</td>
+      <td>VC161</td>
+      <td>Manvitha</td>
+      <td>https://www.skills.google/public_profiles/befc4a50-d63c-4997-a538-829e677bf0a5</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>126</td>
+      <td>VC177</td>
+      <td>Manvitha</td>
+      <td>https://www.skills.google/public_profiles/eef11cc9-c77c-439e-ba4e-e9ee44fd7b69</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>127</td>
+      <td>VC055</td>
+      <td>Mithun</td>
+      <td>https://www.skills.google/public_profiles/f2dc3e0b-eff7-432d-ba67-0d453f510273</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>128</td>
+      <td>VC137</td>
+      <td>Mithun K</td>
+      <td>https://www.skills.google/public_profiles/1bc3455b-4e30-40b4-8d70-e2608801cb15</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>129</td>
+      <td>VC163</td>
+      <td>Mithun K</td>
+      <td>https://www.skills.google/public_profiles/4c5720b6-9f02-409a-8f67-9bf46d708406</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>130</td>
+      <td>VC077</td>
+      <td>Moksha</td>
+      <td>https://www.skills.google/public_profiles/c6464704-eab5-4c3b-be61-67201c3634bb</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>131</td>
+      <td>VC138</td>
+      <td>Nandesh Gowda</td>
+      <td>https://www.skills.google/public_profiles/15e6ffb2-579b-4a35-92fc-fa1d7526f5a2</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>132</td>
+      <td>VC039</td>
+      <td>Navaneeth K S</td>
+      <td>https://www.skills.google/public_profiles/e0e926af-e1b5-4b6c-8f91-aeb62085e171</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>133</td>
+      <td>VC175</td>
+      <td>Navyashree</td>
+      <td>https://www.skills.google/public_profiles/1f6d9f09-33b7-4da3-aa14-8b06f1440153</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>134</td>
+      <td>VC033</td>
+      <td>Neeraj S</td>
+      <td>https://www.skills.google/public_profiles/ee02e614-e3b2-4674-8400-f09a23c12532</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>135</td>
+      <td>VC119</td>
+      <td>Nikhil G R Rai</td>
+      <td>https://www.skills.google/public_profiles/2647bcda-36e7-4f5f-a58b-beb05a7f0f0a</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>136</td>
+      <td>VC064</td>
+      <td>Nireeksha AR</td>
+      <td>https://www.skills.google/public_profiles/8b8620a2-1583-4304-a48d-25c74e565b35</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>137</td>
+      <td>VC042</td>
+      <td>Nishchitha</td>
+      <td>https://www.skills.google/public_profiles/53ec0c8c-a822-4ca9-8666-c76f21327226</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>138</td>
+      <td>VC046</td>
+      <td>Niveditha B</td>
+      <td>https://www.skills.google/public_profiles/178b9923-59ff-46db-8451-235b36c2f7f9</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>139</td>
+      <td>VC166</td>
+      <td>Niveditha B</td>
+      <td>https://www.skills.google/public_profiles/2bb23643-4133-4cd3-b964-96d53ec04e33</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>140</td>
+      <td>VC056</td>
+      <td>Pavanraj</td>
+      <td>https://www.skills.google/public_profiles/eb78fb21-0eff-41c1-a7db-e7e6e3721633</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>141</td>
+      <td>VC180</td>
+      <td>Pooja A</td>
+      <td>https://www.skills.google/public_profiles/e22c224d-0440-462a-aae8-a25b2427e19b</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>142</td>
+      <td>VC140</td>
+      <td>Pradyumna Prabhu</td>
+      <td>https://www.skills.google/public_profiles/c1d95e3b-52a3-43e2-882f-3722394f1748</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>143</td>
+      <td>VC124</td>
+      <td>Prajna. P</td>
+      <td>https://www.skills.google/public_profiles/aabddc4f-0768-4018-aa5b-33285a2b82be</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>144</td>
+      <td>VC154</td>
+      <td>Prajwala shivanaik Baganavar</td>
+      <td>https://www.skills.google/public_profiles/9f4d36a9-0508-4ef7-91f4-3b6617189c12</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>145</td>
+      <td>VC141</td>
+      <td>Prakhyath Acharya</td>
+      <td>https://www.skills.google/public_profiles/158a2a8e-ca5d-4b47-8f06-fe990cb113ca</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>146</td>
+      <td>VC178</td>
+      <td>Pramod p</td>
+      <td>https://www.skills.google/public_profiles/db27ace1-c0b2-48df-a779-0685cea60bf0</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>147</td>
+      <td>VC120</td>
+      <td>Prathiksha</td>
+      <td>https://www.skills.google/public_profiles/54ff4b8d-07ea-4cc7-ae25-69fad0f03fc5</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>148</td>
+      <td>VC080</td>
+      <td>Preethal D V</td>
+      <td>https://www.skills.google/public_profiles/a40b28e8-eb73-473c-b644-126eb1274189</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>149</td>
+      <td>VC162</td>
+      <td>Punya</td>
+      <td>https://www.skills.google/public_profiles/1cb8cc75-3041-4083-b424-d98ffb9d3cef</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>150</td>
+      <td>VC158</td>
+      <td>Rajesh Kumar P</td>
+      <td>https://www.skills.google/public_profiles/351cebf4-3b01-4698-aa55-88459642334e</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>151</td>
+      <td>VC020</td>
+      <td>Ranjith bk</td>
+      <td>https://www.skills.google/public_profiles/98de6ae8-986b-4606-b3cd-d75e95d4280c</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>152</td>
+      <td>VC006</td>
+      <td>Rishika</td>
+      <td>https://www.skills.google/public_profiles/ded31f0c-48b2-4d4e-9801-a64a844fd63e</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>153</td>
+      <td>VC164</td>
+      <td>Rithesh K</td>
+      <td>https://www.skills.google/public_profiles/ed2daf8a-2119-4dd4-b0a7-2cd160a0dd79</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>154</td>
+      <td>VC179</td>
+      <td>Sachin Rao K</td>
+      <td>https://www.skills.google/public_profiles/a8f04ecd-e18f-47af-8441-4c707a9ac2dd</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Gemini Enterprise Agent Ready, Arcade - GEAR</td>
+    </tr>
+    <tr>
+      <td>155</td>
+      <td>VC001</td>
+      <td>Sachin Upparna</td>
+      <td>https://www.skills.google/public_profiles/088bd25d-f4f5-4280-ac3f-0a896db56cc1</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Gemini Enterprise Agent Ready, Arcade - GEAR</td>
+    </tr>
+    <tr>
+      <td>156</td>
+      <td>VC172</td>
+      <td>Sachitha</td>
+      <td>https://www.skills.google/public_profiles/aef2a1ad-498c-4665-8509-b4180914259c</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>157</td>
+      <td>VC096</td>
+      <td>Sahithya.B.S</td>
+      <td>https://www.skills.google/public_profiles/4e78f186-b93e-457d-ad27-e26a68921df1</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>158</td>
+      <td>VC086</td>
+      <td>Samarth</td>
+      <td>https://www.skills.google/public_profiles/0cfee530-3b8d-44c8-913f-fa303252343f</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>159</td>
+      <td>VC181</td>
+      <td>Sathwik MG</td>
+      <td>https://www.skills.google/public_profiles/6663377c-f7a1-42ea-9bf6-f54b2d7b42f7</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>160</td>
+      <td>VC105</td>
+      <td>Sathyaprasad P V</td>
+      <td>https://www.skills.google/public_profiles/a2f861e9-d9b7-40bd-aa3f-89ff784d4d0c</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>161</td>
+      <td>VC147</td>
+      <td>Sharanya</td>
+      <td>https://www.skills.google/public_profiles/83139c28-fe78-41bf-95d4-74976eb2d2f5</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>162</td>
+      <td>VC082</td>
+      <td>Shravan.k</td>
+      <td>https://www.skills.google/public_profiles/6d4816a8-96b4-4521-99e2-5650432cb0ab</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>163</td>
+      <td>VC054</td>
+      <td>Shravya CH</td>
+      <td>https://www.skills.google/public_profiles/a3492081-f4ba-467c-9fe7-cfd6292641a1</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>164</td>
+      <td>VC176</td>
+      <td>Shreya</td>
+      <td>https://www.skills.google/public_profiles/9c7a4490-c490-4e0a-b22e-c8e98338f2cf</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>165</td>
+      <td>VC089</td>
+      <td>Shreyas</td>
+      <td>https://www.skills.google/public_profiles/67f206c4-3439-48d1-80b5-117d9ee64d42</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>166</td>
+      <td>VC112</td>
+      <td>Sinchana Shetty</td>
+      <td>https://www.skills.google/public_profiles/5fd65660-4cc4-4cf4-8d7b-89c22030e8cf</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>167</td>
+      <td>VC059</td>
+      <td>Siri Shenoy</td>
+      <td>https://www.skills.google/public_profiles/bd07dc88-e91a-43a8-826e-4ff39e096401</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>168</td>
+      <td>VC031</td>
+      <td>Skanda Prasad K</td>
+      <td>https://www.skills.google/public_profiles/0342e638-b792-43af-913d-0bc738acf81e</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>169</td>
+      <td>VC117</td>
+      <td>Srijan</td>
+      <td>https://www.skills.google/public_profiles/bbc3d336-945a-462d-a904-19cf8ddbe268</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>170</td>
+      <td>VC088</td>
+      <td>Sumukha S H</td>
+      <td>https://www.skills.google/public_profiles/32eb5098-0915-4d24-946c-39aa2502143e</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>171</td>
+      <td>VC134</td>
+      <td>Sushanth K k</td>
+      <td>https://www.skills.google/public_profiles/695498e2-3db4-4aa5-9c58-0fb4e037c340</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>172</td>
+      <td>VC133</td>
+      <td>Thanmayi</td>
+      <td>https://www.skills.google/public_profiles/ba2af442-e89b-40fc-a217-b0aa9e05fe6b</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>173</td>
+      <td>VC122</td>
+      <td>Thanvi</td>
+      <td>https://www.skills.google/public_profiles/f399a02d-b26f-4cdb-827b-5b1c5f2a16c4</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>174</td>
+      <td>VC150</td>
+      <td>Tharun k</td>
+      <td>https://www.skills.google/public_profiles/3dd9c7d8-26d7-4e8d-9914-9f1924c91945</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>175</td>
+      <td>VC073</td>
+      <td>Thrisha</td>
+      <td>https://www.skills.google/public_profiles/b65324d1-ff62-430c-9b60-f5ebbb647419</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>176</td>
+      <td>VC170</td>
+      <td>Thrisha</td>
+      <td>https://www.skills.google/public_profiles/97272dcb-abb6-4a67-9534-2f34ad8ef78b</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>177</td>
+      <td>VC085</td>
+      <td>Vaibhav Jayarama</td>
+      <td>https://www.skills.google/public_profiles/09b53b34-fc9a-41fc-9f9e-b4a336101f34</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>178</td>
+      <td>VC125</td>
+      <td>Veekshitha M C</td>
+      <td>https://www.skills.google/public_profiles/d54a2323-14b9-4aca-b11b-041c4fa1a587</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>179</td>
+      <td>VC174</td>
+      <td>Vidyashree Pai</td>
+      <td>https://www.skills.google/public_profiles/53dde1e2-6dde-4067-a7d2-7e8963ffd123</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>180</td>
+      <td>VC107</td>
+      <td>Vishwas Nayak</td>
+      <td>https://www.skills.google/public_profiles/9cad9384-8080-495d-aff1-f745e56e61ee</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>181</td>
+      <td>VC098</td>
+      <td>Yakshitha</td>
+      <td>https://www.skills.google/public_profiles/8fa875fe-f30f-430c-a8a6-ff8210f99563</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>182</td>
+      <td>VC002</td>
+      <td>Yashmitha</td>
+      <td>https://www.skills.google/public_profiles/e657faed-f72e-4fa3-a0ce-95e90d215e3b</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>183</td>
+      <td>VC149</td>
+      <td>shravya.B</td>
+      <td>https://www.skills.google/public_profiles/e23b4e2f-48a9-4d8f-b339-53fd5cf3bc37</td>
+      <td>0</td>
+      <td>0%</td>
+      <td></td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+
+        <p id="noResults" style="display:none; padding:15px;">
+            No matching participants found.
+        </p>
+
+    </section>
+
+    <footer>
+        GDGoC VC 2026–27 | Cloud Campaign
+        <br>
+        Keep learning and keep building!
+    </footer>
+
+</div>
+
+<script>
+    const table = document.querySelector(".leaderboard");
+    const podium = document.getElementById("podium");
+    const searchInput = document.getElementById("searchInput");
+    const noResults = document.getElementById("noResults");
+
+    if (table) {
+        const rows = Array.from(table.querySelectorAll("tbody tr"));
+
+        // Make public profile URLs clickable
+        rows.forEach(row => {
+            const profileCell = row.cells[3];
+
+            if (profileCell) {
+                const url = profileCell.textContent.trim();
+
+                if (url.startsWith("https://") || url.startsWith("http://")) {
+                    const link = document.createElement("a");
+                    link.href = url;
+                    link.target = "_blank";
+                    link.rel = "noopener noreferrer";
+                    link.textContent = "View Profile";
+
+                    profileCell.textContent = "";
+                    profileCell.appendChild(link);
+                }
+            }
+        });
+
+        // Display the top three
+        const medals = ["🥇", "🥈", "🥉"];
+
+        const topThree = rows.slice(0, 3);
+
+        podium.innerHTML = "";
+
+        if (topThree.length === 0) {
+            podium.textContent = "No leaderboard data available.";
+        }
+
+        topThree.forEach((row, index) => {
+            const name = row.cells[2]?.textContent || "Participant";
+            const badges = row.cells[4]?.textContent || "0";
+
+            const card = document.createElement("div");
+            card.className = "podium-card";
+
+            const medal = document.createElement("div");
+            medal.className = "medal";
+            medal.textContent = medals[index];
+
+            const participantName = document.createElement("h3");
+            participantName.textContent = name;
+
+            const progress = document.createElement("p");
+            progress.textContent = badges + " Skill Badges";
+
+            card.append(medal, participantName, progress);
+            podium.appendChild(card);
+        });
+
+        // Search participants
+        searchInput.addEventListener("input", function () {
+            const query = this.value.toLowerCase();
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+                const matches = row.textContent.toLowerCase().includes(query);
+
+                row.style.display = matches ? "" : "none";
+
+                if (matches) visibleCount++;
+            });
+
+            noResults.style.display = visibleCount === 0 ? "block" : "none";
+        });
+    }
+</script>
+
+</body>
+</html>
