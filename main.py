@@ -13,12 +13,16 @@ env = Environment(
     autoescape=select_autoescape()
 )
 
-required_tasks = ["Getting Started with Google Kubernetes Engine",
-                  "Google Cloud Fundamentals: Core Infrastructure",
-                  "Essential Google Cloud Infrastructure: Foundation",
-                  "Essential Google Cloud Infrastructure: Core Services",
-                  "Optimize Costs for Google Kubernetes Engine",
-                  "Build Infrastructure with Terraform on Google Cloud"]
+required_tasks = ["The Basics of Google Cloud Compute",
+    "Configure Service Accounts and IAM Roles for Google Cloud",
+    "Implement Speech and Language Solutions with Pre-trained APIs",
+    "Develop AI-Powered Prototypes in Google AI Studio",
+    "Analyze Images with the Cloud Vision API",
+    "Build a Website on Google Cloud",
+    "Create Your First Gemini Enterprise Application",
+    "Store, Process, and Manage Data on Google Cloud - Console",
+    "Using the Google Cloud Speech API",
+    "Explore Generative AI in Agent Platform"]
 
 sheet_id = os.environ.get("SHEET_ID")
 sheet_name = urllib.parse.quote("Form Responses 1")
