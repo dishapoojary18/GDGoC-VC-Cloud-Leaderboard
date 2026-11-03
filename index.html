@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>GDGoC VC | Cloud Leaderboard 2026–27</title>
 
     <style>
@@ -21,12 +20,12 @@
         }
 
         .container {
-            max-width: 1150px;
+            max-width: 1100px;
             margin: auto;
         }
 
         header {
-            background: #ffffff;
+            background: white;
             padding: 30px;
             border-radius: 16px;
             margin-bottom: 22px;
@@ -76,46 +75,8 @@
         }
 
         .section h2 {
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             font-size: 21px;
-        }
-
-        .podium {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-        }
-
-        .podium-card {
-            text-align: center;
-            padding: 20px 10px;
-            background: #f5f7fb;
-            border-radius: 12px;
-            overflow-wrap: anywhere;
-        }
-
-        .podium-card .medal {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .podium-card h3 {
-            font-size: 16px;
-            margin-bottom: 8px;
-        }
-
-        .podium-card p {
-            color: #5f6368;
-            font-size: 14px;
-        }
-
-        .search {
-            width: 100%;
-            padding: 13px;
-            border: 1px solid #dadce0;
-            border-radius: 9px;
-            font-size: 15px;
-            margin-bottom: 18px;
         }
 
         .table-wrapper {
@@ -125,14 +86,14 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 750px;
+            min-width: 400px;
         }
 
         th, td {
-            padding: 14px 12px;
+            padding: 16px;
             text-align: left;
             border-bottom: 1px solid #eeeeee;
-            font-size: 14px;
+            font-size: 15px;
         }
 
         th {
@@ -140,17 +101,8 @@
             color: #3c4043;
         }
 
-        tr:hover td {
+        tbody tr:hover td {
             background: #f8faff;
-        }
-
-        a {
-            color: #1a73e8;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
         }
 
         footer {
@@ -177,8 +129,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .podium {
-                grid-template-columns: 1fr;
+            .section {
+                padding: 16px;
             }
         }
     </style>
@@ -196,10 +148,9 @@
         <p>
             Cloud Campaign 2026–27 | Learn. Build. Achieve.
         </p>
-        <p style="margin-top: 12px;">
-            Last updated: <strong>03 November 2026, 09:59 PM IST</strong>
-        </p>
     </header>
+
+    <!-- Statistics -->
 
     <div class="stats">
 
@@ -215,23 +166,11 @@
 
     </div>
 
-    <section class="section">
-        <h2>🏆 Top 3 Participants</h2>
-        <div class="podium" id="podium">
-            <p>Loading leaderboard...</p>
-        </div>
-    </section>
+    <!-- Leaderboard -->
 
     <section class="section">
 
-        <h2>📊 Complete Leaderboard</h2>
-
-        <input
-            type="text"
-            id="searchInput"
-            class="search"
-            placeholder="Search by participant name or ID..."
-        >
+        <h2>🏅 Complete Leaderboard</h2>
 
         <div class="table-wrapper">
             <table class="dataframe leaderboard">
@@ -570,17 +509,6 @@
     </tr>
     <tr>
       <td>30</td>
-      <td>VC165</td>
-      <td>Thrupthi M</td>
-      <td>https://www.skills.google/public_profiles/c98940b9-99d2-4448-943a-1c7cf394f88e</td>
-      <td>10</td>
-      <td>100%</td>
-      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
-      <td>No Milestone</td>
-      <td>Not applicable</td>
-    </tr>
-    <tr>
-      <td>31</td>
       <td>VC083</td>
       <td>Trshika Rai</td>
       <td>https://www.skills.google/public_profiles/d9c89c81-1107-40e4-83dd-16b87b828ee6</td>
@@ -591,7 +519,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>32</td>
+      <td>31</td>
       <td>VC130</td>
       <td>VIJETH</td>
       <td>https://www.skills.google/public_profiles/36def453-7e14-4f63-b5df-38b9e48a6683</td>
@@ -602,7 +530,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>33</td>
+      <td>32</td>
       <td>VC070</td>
       <td>Vaishak k</td>
       <td>https://www.skills.google/public_profiles/68a23334-c912-48ed-b953-13f6393db0ac</td>
@@ -613,7 +541,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>34</td>
+      <td>33</td>
       <td>VC014</td>
       <td>Varsha M</td>
       <td>https://www.skills.google/public_profiles/d1052f05-c890-40fe-93ab-7a7d7910a653</td>
@@ -624,7 +552,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>35</td>
+      <td>34</td>
       <td>VC051</td>
       <td>chashma p m</td>
       <td>https://www.skills.google/public_profiles/e2071ffb-1383-412f-8914-81a782cbf0e0</td>
@@ -635,7 +563,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>36</td>
+      <td>35</td>
       <td>VC009</td>
       <td>keerthi</td>
       <td>https://www.skills.google/public_profiles/bc6b54e7-c881-4126-b34f-e380941c6933</td>
@@ -646,7 +574,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>37</td>
+      <td>36</td>
       <td>VC093</td>
       <td>Manasvi Shetty K</td>
       <td>https://www.skills.google/public_profiles/b9afb233-3e2f-4b65-bbb7-9efc5e82e8fa</td>
@@ -657,7 +585,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>38</td>
+      <td>37</td>
       <td>VC068</td>
       <td>Sannidhi prabhu</td>
       <td>https://www.skills.google/public_profiles/6ed07797-2eb7-4f13-811f-e3cdbc1a2007</td>
@@ -668,7 +596,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>39</td>
+      <td>38</td>
       <td>VC041</td>
       <td>Dhanyashree</td>
       <td>https://www.skills.google/public_profiles/11a6da16-1419-41f4-afed-18f1da81571e</td>
@@ -679,7 +607,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>40</td>
+      <td>39</td>
       <td>VC145</td>
       <td>Manyashree</td>
       <td>https://www.skills.google/public_profiles/20b7c89e-2ff3-4cbc-998d-801e448f3b3a</td>
@@ -690,7 +618,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>41</td>
+      <td>40</td>
       <td>VC030</td>
       <td>Preksha</td>
       <td>https://www.skills.google/public_profiles/b0ee57be-894d-48c3-8a2b-bcbb3a44a86f</td>
@@ -701,7 +629,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>42</td>
+      <td>41</td>
       <td>VC027</td>
       <td>Rithika sri</td>
       <td>https://www.skills.google/public_profiles/49eccb5f-1853-43c8-966b-ed89273af3fc</td>
@@ -712,7 +640,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>43</td>
+      <td>42</td>
       <td>VC065</td>
       <td>Subhiksha</td>
       <td>https://www.skills.google/public_profiles/992492ac-0fcd-4695-9301-1d30e7207b02</td>
@@ -723,7 +651,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>44</td>
+      <td>43</td>
       <td>VC097</td>
       <td>Nishmitha K</td>
       <td>https://www.skills.google/public_profiles/6f9d7b3a-9e83-4874-907c-376ee79b319e</td>
@@ -734,7 +662,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>45</td>
+      <td>44</td>
       <td>VC099</td>
       <td>Dhanya</td>
       <td>https://www.skills.google/public_profiles/f1be5fb7-e242-4326-a40b-2be08c487de4</td>
@@ -742,6 +670,17 @@
       <td>60%</td>
       <td>Configure Service Accounts and IAM Roles for Google Cloud, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
       <td>Milestone 2</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td>VC058</td>
+      <td>Rakshitha</td>
+      <td>https://www.skills.google/public_profiles/11470808-d0c5-4188-814e-bbea616c9931</td>
+      <td>6</td>
+      <td>60%</td>
+      <td>The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
+      <td>Milestone 1</td>
       <td>Not applicable</td>
     </tr>
     <tr>
@@ -790,17 +729,6 @@
     </tr>
     <tr>
       <td>50</td>
-      <td>VC058</td>
-      <td>Rakshitha</td>
-      <td>https://www.skills.google/public_profiles/11470808-d0c5-4188-814e-bbea616c9931</td>
-      <td>5</td>
-      <td>50%</td>
-      <td>The Basics of Google Cloud Compute, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform</td>
-      <td>Milestone 1</td>
-      <td>Not applicable</td>
-    </tr>
-    <tr>
-      <td>51</td>
       <td>VC092</td>
       <td>Kushal M D</td>
       <td>https://www.skills.google/public_profiles/3da55fa1-0603-4108-9871-e35552053401</td>
@@ -811,7 +739,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>52</td>
+      <td>51</td>
       <td>VC101</td>
       <td>M S Pooja</td>
       <td>https://www.skills.google/public_profiles/8d72ce8e-b83d-46bc-add6-d227a95b2c9a</td>
@@ -822,7 +750,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>53</td>
+      <td>52</td>
       <td>VC078</td>
       <td>Prathyusha K U</td>
       <td>https://www.skills.google/public_profiles/6c47ec8f-4e65-4451-b5b2-be58e75956bb</td>
@@ -833,7 +761,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>54</td>
+      <td>53</td>
       <td>VC053</td>
       <td>Greeshma</td>
       <td>https://www.skills.google/public_profiles/a7712e6a-40fc-4eb0-ade0-9ef0ac84b660</td>
@@ -844,7 +772,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>55</td>
+      <td>54</td>
       <td>VC087</td>
       <td>Mahalasa Pai B</td>
       <td>https://www.skills.google/public_profiles/b2bb8cb6-38c3-41d6-aae1-950e5cbc27e3</td>
@@ -855,7 +783,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>56</td>
+      <td>55</td>
       <td>VC032</td>
       <td>Meghashree H K</td>
       <td>https://www.skills.google/public_profiles/35512a65-b45e-41dc-abc1-77fb7a317144</td>
@@ -866,7 +794,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>57</td>
+      <td>56</td>
       <td>VC173</td>
       <td>Bhavitha D S</td>
       <td>https://www.skills.google/public_profiles/ef6a0667-cce3-4217-b658-e43e62f5a0de</td>
@@ -877,7 +805,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>58</td>
+      <td>57</td>
       <td>VC071</td>
       <td>Chethana</td>
       <td>https://www.skills.google/public_profiles/103c9098-af7e-4c90-b519-aa40e53a4080</td>
@@ -888,7 +816,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>59</td>
+      <td>58</td>
       <td>VC110</td>
       <td>Kruthik B Rai</td>
       <td>https://www.skills.google/public_profiles/1d2370e1-caae-4eb7-b33b-505572a8f421</td>
@@ -899,7 +827,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>60</td>
+      <td>59</td>
       <td>VC069</td>
       <td>Ananya</td>
       <td>https://www.skills.google/public_profiles/0fbcc9dd-babc-493f-9166-c79ca7a351a5</td>
@@ -910,7 +838,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>61</td>
+      <td>60</td>
       <td>VC104</td>
       <td>Anusha K K</td>
       <td>https://www.skills.google/public_profiles/413ffbf9-118c-4713-aa52-dbcf5b606dc6</td>
@@ -921,7 +849,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>62</td>
+      <td>61</td>
       <td>VC061</td>
       <td>Chaithra C</td>
       <td>https://www.skills.google/public_profiles/c884188d-c5f3-4948-8b39-520d9abbe24b</td>
@@ -932,7 +860,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>63</td>
+      <td>62</td>
       <td>VC160</td>
       <td>Deepika</td>
       <td>https://www.skills.google/public_profiles/c6473697-d5bd-4415-90fe-4c7a8f24f44b</td>
@@ -943,7 +871,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>64</td>
+      <td>63</td>
       <td>VC128</td>
       <td>Gaurav c</td>
       <td>https://www.skills.google/public_profiles/68553449-70ad-4956-bd29-6586903f161d</td>
@@ -954,10 +882,21 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>65</td>
+      <td>64</td>
       <td>VC036</td>
       <td>Ishan H D</td>
       <td>https://www.skills.google/public_profiles/3f3f6a2c-2bb8-4b96-afbf-d6bfb4808843</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>The Basics of Google Cloud Compute</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>65</td>
+      <td>VC037</td>
+      <td>Janani B G</td>
+      <td>https://www.skills.google/public_profiles/08190980-ce8a-4388-aa9b-219efdb56867</td>
       <td>1</td>
       <td>10%</td>
       <td>The Basics of Google Cloud Compute</td>
@@ -1054,6 +993,17 @@
     </tr>
     <tr>
       <td>74</td>
+      <td>VC165</td>
+      <td>Thrupthi M</td>
+      <td>https://www.skills.google/public_profiles/c98940b9-99d2-4448-943a-1c7cf394f88e</td>
+      <td>1</td>
+      <td>10%</td>
+      <td>The Basics of Google Cloud Compute</td>
+      <td>No Milestone</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>75</td>
       <td>VC095</td>
       <td>Yashaswi S M</td>
       <td>https://www.skills.google/public_profiles/cb98763c-73d2-491b-afca-b212a433ab18</td>
@@ -1064,7 +1014,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>75</td>
+      <td>76</td>
       <td>VC148</td>
       <td>A.V.Pooja</td>
       <td>https://www.skills.google/public_profiles/d52b4d1f-b885-4dd1-ac2b-e54cf308ef51</td>
@@ -1075,7 +1025,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>76</td>
+      <td>77</td>
       <td>VC183</td>
       <td>ABNEESH KUMAR SHARMA</td>
       <td>https://www.skills.google/public_profiles/7f4504c3-c8fd-411f-be0d-a386989d18e4</td>
@@ -1086,7 +1036,7 @@
       <td>No Badge</td>
     </tr>
     <tr>
-      <td>77</td>
+      <td>78</td>
       <td>VC111</td>
       <td>Akash rai</td>
       <td>https://www.skills.google/public_profiles/208fefac-0317-47b2-b985-d9da3dda37b6</td>
@@ -1097,7 +1047,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>78</td>
+      <td>79</td>
       <td>VC156</td>
       <td>Akshitha</td>
       <td>https://www.skills.google/public_profiles/5492a1fb-7614-494c-9511-d58e611cb073</td>
@@ -1108,7 +1058,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>79</td>
+      <td>80</td>
       <td>VC126</td>
       <td>Akshitha m c</td>
       <td>https://www.skills.google/public_profiles/289a4545-67c4-48bf-8c7d-0a070d70236d</td>
@@ -1119,7 +1069,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>80</td>
+      <td>81</td>
       <td>VC123</td>
       <td>Ananya</td>
       <td>https://www.skills.google/public_profiles/071a9f9e-1ec4-49a0-a8d1-967fb606daf0</td>
@@ -1130,7 +1080,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>81</td>
+      <td>82</td>
       <td>VC004</td>
       <td>Anushree</td>
       <td>https://www.skills.google/public_profiles/94a9249e-4e32-4507-beab-fb8917d9390e</td>
@@ -1141,7 +1091,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>82</td>
+      <td>83</td>
       <td>VC131</td>
       <td>Anushree</td>
       <td>https://www.skills.google/public_profiles/7896a6e2-c861-47d8-ab17-e162028a0079</td>
@@ -1152,7 +1102,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>83</td>
+      <td>84</td>
       <td>VC114</td>
       <td>Anvitha A R</td>
       <td>https://www.skills.google/public_profiles/e44f9d78-a753-4232-8dd0-883677ccaeba</td>
@@ -1163,7 +1113,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>84</td>
+      <td>85</td>
       <td>VC102</td>
       <td>Apeksha</td>
       <td>https://www.skills.google/public_profiles/3557d9c0-1af2-43a6-b354-70bc4c8a870a</td>
@@ -1174,7 +1124,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>85</td>
+      <td>86</td>
       <td>VC035</td>
       <td>B R Chinthan Kumar</td>
       <td>https://www.skills.google/public_profiles/8bdaf159-f465-473c-85d7-dbeb598f531d</td>
@@ -1185,7 +1135,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>86</td>
+      <td>87</td>
       <td>VC167</td>
       <td>B.Namitha</td>
       <td>https://www.skills.google/public_profiles/a216fb9e-8233-44f9-80b9-e86fb8e7093c</td>
@@ -1196,7 +1146,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>87</td>
+      <td>88</td>
       <td>VC062</td>
       <td>Bhuvanesh</td>
       <td>https://www.skills.google/public_profiles/bb7284a7-8cb7-4e3f-9cfa-805dbad13332</td>
@@ -1207,7 +1157,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>88</td>
+      <td>89</td>
       <td>VC157</td>
       <td>Chaithanya</td>
       <td>https://www.skills.google/public_profiles/16d4fb4d-cee1-4b90-b335-a5146569d139</td>
@@ -1218,7 +1168,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>89</td>
+      <td>90</td>
       <td>VC029</td>
       <td>Chaithra</td>
       <td>https://www.skills.google/public_profiles/dfca916b-b5e8-4191-9f3b-fb41518f94a5</td>
@@ -1229,7 +1179,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>90</td>
+      <td>91</td>
       <td>VC152</td>
       <td>Chinthana N</td>
       <td>https://www.skills.google/public_profiles/7466b31b-98bf-4766-8311-3c6e2b4c6829</td>
@@ -1240,7 +1190,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>91</td>
+      <td>92</td>
       <td>VC012</td>
       <td>Deeksha</td>
       <td>https://www.skills.google/public_profiles/3f8cf238-eb32-4f53-89ca-3602eb7c0e56</td>
@@ -1251,7 +1201,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>92</td>
+      <td>93</td>
       <td>VC139</td>
       <td>Deekshith kumar A</td>
       <td>https://www.skills.google/public_profiles/99780072-a838-45bc-928c-1cbddc36cb9c</td>
@@ -1262,7 +1212,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>93</td>
+      <td>94</td>
       <td>VC182</td>
       <td>Dhanish Amin</td>
       <td>https://www.skills.google/public_profiles/d37fd2ff-301d-479a-845f-404bd496a620</td>
@@ -1273,7 +1223,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>94</td>
+      <td>95</td>
       <td>VC159</td>
       <td>Dhrithi T P</td>
       <td>https://www.skills.google/public_profiles/b8f9e04c-bd32-4159-8528-4d409c9c0dec</td>
@@ -1284,7 +1234,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>95</td>
+      <td>96</td>
       <td>VC013</td>
       <td>Disha K</td>
       <td>https://www.skills.google/public_profiles/4b32a07b-bf8d-4a29-a1af-200a10422a36</td>
@@ -1295,7 +1245,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>96</td>
+      <td>97</td>
       <td>VC132</td>
       <td>Divya K S</td>
       <td>https://www.skills.google/public_profiles/1d829fae-0d51-4970-83a7-3836a96418bc</td>
@@ -1306,7 +1256,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>97</td>
+      <td>98</td>
       <td>VC072</td>
       <td>Dravyashree rai</td>
       <td>https://www.skills.google/public_profiles/19ef88b8-da9e-4b02-af55-063540ae7af7</td>
@@ -1317,7 +1267,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>98</td>
+      <td>99</td>
       <td>VC049</td>
       <td>Gagan p</td>
       <td>https://www.skills.google/public_profiles/6cb4c327-4c61-4801-abf2-b7ee67ba09b2</td>
@@ -1328,7 +1278,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>99</td>
+      <td>100</td>
       <td>VC003</td>
       <td>Gagana</td>
       <td>https://www.skills.google/public_profiles/3302d942-c27c-4316-89e9-4e72cb86aefe</td>
@@ -1339,7 +1289,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>100</td>
+      <td>101</td>
       <td>VC106</td>
       <td>Harsha P</td>
       <td>https://www.skills.google/public_profiles/34ed3124-7b64-4a95-b0ea-2fe90423fdc3</td>
@@ -1350,7 +1300,7 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>101</td>
+      <td>102</td>
       <td>VC079</td>
       <td>Harshith p rai</td>
       <td>https://www.skills.google/public_profiles/d23943e8-30b0-47be-b9ca-3cefd0deb5c5</td>
@@ -1361,21 +1311,10 @@
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td>102</td>
+      <td>103</td>
       <td>VC118</td>
       <td>Hithesh</td>
       <td>https://www.skills.google/public_profiles/478e26d2-4698-4584-91ce-907b6970d189</td>
-      <td>0</td>
-      <td>0%</td>
-      <td></td>
-      <td>No Milestone</td>
-      <td>Not applicable</td>
-    </tr>
-    <tr>
-      <td>103</td>
-      <td>VC037</td>
-      <td>Janani B G</td>
-      <td>https://www.skills.google/public_profiles/08190980-ce8a-4388-aa9b-219efdb56867</td>
       <td>0</td>
       <td>0%</td>
       <td></td>
@@ -2266,10 +2205,6 @@
 </table>
         </div>
 
-        <p id="noResults" style="display:none; padding:15px;">
-            No matching participants found.
-        </p>
-
     </section>
 
     <footer>
@@ -2281,82 +2216,77 @@
 </div>
 
 <script>
+
     const table = document.querySelector(".leaderboard");
-    const podium = document.getElementById("podium");
-    const searchInput = document.getElementById("searchInput");
-    const noResults = document.getElementById("noResults");
 
     if (table) {
-        const rows = Array.from(table.querySelectorAll("tbody tr"));
 
-        // Make public profile URLs clickable
-        rows.forEach(row => {
-            const profileCell = row.cells[3];
+        const headerRow = table.querySelector("thead tr");
+        const tbody = table.querySelector("tbody");
 
-            if (profileCell) {
-                const url = profileCell.textContent.trim();
+        if (headerRow && tbody) {
 
-                if (url.startsWith("https://") || url.startsWith("http://")) {
-                    const link = document.createElement("a");
-                    link.href = url;
-                    link.target = "_blank";
-                    link.rel = "noopener noreferrer";
-                    link.textContent = "View Profile";
+            const headers = Array.from(headerRow.querySelectorAll("th"));
 
-                    profileCell.textContent = "";
-                    profileCell.appendChild(link);
-                }
+            const findColumn = (name) =>
+                headers.findIndex(header =>
+                    header.textContent.trim().toLowerCase() === name
+                );
+
+            const rankIndex = findColumn("rank");
+            const nameIndex = findColumn("display name");
+            const badgesIndex = findColumn("badges completed");
+
+            if (rankIndex !== -1 && nameIndex !== -1 && badgesIndex !== -1) {
+
+                const rows = Array.from(tbody.querySelectorAll("tr"));
+
+                // Sort by badges completed, highest first.
+
+                rows.sort((a, b) => {
+                    const badgesA = parseInt(a.cells[badgesIndex].textContent) || 0;
+                    const badgesB = parseInt(b.cells[badgesIndex].textContent) || 0;
+
+                    return badgesB - badgesA;
+                });
+
+                // Display only Rank, Name and Badges Completed.
+
+                const keepIndexes = [rankIndex, nameIndex, badgesIndex];
+
+                headers.forEach((header, index) => {
+                    if (!keepIndexes.includes(index)) {
+                        header.remove();
+                    }
+                });
+
+                rows.forEach((row, index) => {
+
+                    const cells = Array.from(row.children);
+
+                    cells.forEach((cell, cellIndex) => {
+                        if (!keepIndexes.includes(cellIndex)) {
+                            cell.remove();
+                        }
+                    });
+
+                    // Assign rank automatically.
+
+                    row.cells[0].textContent = index + 1;
+
+                    tbody.appendChild(row);
+                });
+
+                // Change Display Name heading to Name.
+
+                headerRow.cells[1].textContent = "Name";
+
+            } else {
+                console.error("Required leaderboard columns were not found.");
             }
-        });
-
-        // Display the top three
-        const medals = ["🥇", "🥈", "🥉"];
-
-        const topThree = rows.slice(0, 3);
-
-        podium.innerHTML = "";
-
-        if (topThree.length === 0) {
-            podium.textContent = "No leaderboard data available.";
         }
-
-        topThree.forEach((row, index) => {
-            const name = row.cells[2]?.textContent || "Participant";
-            const badges = row.cells[4]?.textContent || "0";
-
-            const card = document.createElement("div");
-            card.className = "podium-card";
-
-            const medal = document.createElement("div");
-            medal.className = "medal";
-            medal.textContent = medals[index];
-
-            const participantName = document.createElement("h3");
-            participantName.textContent = name;
-
-            const progress = document.createElement("p");
-            progress.textContent = badges + " Skill Badges";
-
-            card.append(medal, participantName, progress);
-            podium.appendChild(card);
-        });
-
-        // Search participants
-        searchInput.addEventListener("input", function () {
-            const query = this.value.toLowerCase();
-            let visibleCount = 0;
-
-            rows.forEach(row => {
-                const matches = row.textContent.toLowerCase().includes(query);
-
-                row.style.display = matches ? "" : "none";
-
-                if (matches) visibleCount++;
-            });
-
-            noResults.style.display = visibleCount === 0 ? "block" : "none";
-        });
     }
+
 </script>
 
 </body>
