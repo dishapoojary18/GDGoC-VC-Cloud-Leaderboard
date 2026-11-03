@@ -1,9 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>GDGoC VC | Cloud Leaderboard 2026–27</title>
 
     <style>
@@ -21,12 +21,12 @@
         }
 
         .container {
-            max-width: 1150px;
+            max-width: 1100px;
             margin: auto;
         }
 
         header {
-            background: #ffffff;
+            background: white;
             padding: 30px;
             border-radius: 16px;
             margin-bottom: 22px;
@@ -76,46 +76,8 @@
         }
 
         .section h2 {
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             font-size: 21px;
-        }
-
-        .podium {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-        }
-
-        .podium-card {
-            text-align: center;
-            padding: 20px 10px;
-            background: #f5f7fb;
-            border-radius: 12px;
-            overflow-wrap: anywhere;
-        }
-
-        .podium-card .medal {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .podium-card h3 {
-            font-size: 16px;
-            margin-bottom: 8px;
-        }
-
-        .podium-card p {
-            color: #5f6368;
-            font-size: 14px;
-        }
-
-        .search {
-            width: 100%;
-            padding: 13px;
-            border: 1px solid #dadce0;
-            border-radius: 9px;
-            font-size: 15px;
-            margin-bottom: 18px;
         }
 
         .table-wrapper {
@@ -125,14 +87,14 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 750px;
+            min-width: 400px;
         }
 
         th, td {
-            padding: 14px 12px;
+            padding: 16px;
             text-align: left;
             border-bottom: 1px solid #eeeeee;
-            font-size: 14px;
+            font-size: 15px;
         }
 
         th {
@@ -140,17 +102,8 @@
             color: #3c4043;
         }
 
-        tr:hover td {
+        tbody tr:hover td {
             background: #f8faff;
-        }
-
-        a {
-            color: #1a73e8;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
         }
 
         footer {
@@ -177,8 +130,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .podium {
-                grid-template-columns: 1fr;
+            .section {
+                padding: 16px;
             }
         }
     </style>
@@ -198,6 +151,8 @@
         </p>
     </header>
 
+    <!-- Statistics -->
+
     <div class="stats">
 
         <div class="stat-card">
@@ -212,31 +167,15 @@
 
     </div>
 
-    <section class="section">
-        <h2>🏆 Top 3 Participants</h2>
-        <div class="podium" id="podium">
-            <p>Loading leaderboard...</p>
-        </div>
-    </section>
+    <!-- Leaderboard -->
 
     <section class="section">
 
-        <h2>📊 Complete Leaderboard</h2>
-
-        <input
-            type="text"
-            id="searchInput"
-            class="search"
-            placeholder="Search by participant name or ID..."
-        >
+        <h2>🏅 Complete Leaderboard</h2>
 
         <div class="table-wrapper">
             {{ table|safe }}
         </div>
-
-        <p id="noResults" style="display:none; padding:15px;">
-            No matching participants found.
-        </p>
 
     </section>
 
@@ -249,82 +188,77 @@
 </div>
 
 <script>
+
     const table = document.querySelector(".leaderboard");
-    const podium = document.getElementById("podium");
-    const searchInput = document.getElementById("searchInput");
-    const noResults = document.getElementById("noResults");
 
     if (table) {
-        const rows = Array.from(table.querySelectorAll("tbody tr"));
 
-        // Make public profile URLs clickable
-        rows.forEach(row => {
-            const profileCell = row.cells[3];
+        const headerRow = table.querySelector("thead tr");
+        const tbody = table.querySelector("tbody");
 
-            if (profileCell) {
-                const url = profileCell.textContent.trim();
+        if (headerRow && tbody) {
 
-                if (url.startsWith("https://") || url.startsWith("http://")) {
-                    const link = document.createElement("a");
-                    link.href = url;
-                    link.target = "_blank";
-                    link.rel = "noopener noreferrer";
-                    link.textContent = "View Profile";
+            const headers = Array.from(headerRow.querySelectorAll("th"));
 
-                    profileCell.textContent = "";
-                    profileCell.appendChild(link);
-                }
+            const findColumn = (name) =>
+                headers.findIndex(header =>
+                    header.textContent.trim().toLowerCase() === name
+                );
+
+            const rankIndex = findColumn("rank");
+            const nameIndex = findColumn("display name");
+            const badgesIndex = findColumn("badges completed");
+
+            if (rankIndex !== -1 && nameIndex !== -1 && badgesIndex !== -1) {
+
+                const rows = Array.from(tbody.querySelectorAll("tr"));
+
+                // Sort by badges completed, highest first.
+
+                rows.sort((a, b) => {
+                    const badgesA = parseInt(a.cells[badgesIndex].textContent) || 0;
+                    const badgesB = parseInt(b.cells[badgesIndex].textContent) || 0;
+
+                    return badgesB - badgesA;
+                });
+
+                // Display only Rank, Name and Badges Completed.
+
+                const keepIndexes = [rankIndex, nameIndex, badgesIndex];
+
+                headers.forEach((header, index) => {
+                    if (!keepIndexes.includes(index)) {
+                        header.remove();
+                    }
+                });
+
+                rows.forEach((row, index) => {
+
+                    const cells = Array.from(row.children);
+
+                    cells.forEach((cell, cellIndex) => {
+                        if (!keepIndexes.includes(cellIndex)) {
+                            cell.remove();
+                        }
+                    });
+
+                    // Assign rank automatically.
+
+                    row.cells[0].textContent = index + 1;
+
+                    tbody.appendChild(row);
+                });
+
+                // Change Display Name heading to Name.
+
+                headerRow.cells[1].textContent = "Name";
+
+            } else {
+                console.error("Required leaderboard columns were not found.");
             }
-        });
-
-        // Display the top three
-        const medals = ["🥇", "🥈", "🥉"];
-
-        const topThree = rows.slice(0, 3);
-
-        podium.innerHTML = "";
-
-        if (topThree.length === 0) {
-            podium.textContent = "No leaderboard data available.";
         }
-
-        topThree.forEach((row, index) => {
-            const name = row.cells[2]?.textContent || "Participant";
-            const badges = row.cells[4]?.textContent || "0";
-
-            const card = document.createElement("div");
-            card.className = "podium-card";
-
-            const medal = document.createElement("div");
-            medal.className = "medal";
-            medal.textContent = medals[index];
-
-            const participantName = document.createElement("h3");
-            participantName.textContent = name;
-
-            const progress = document.createElement("p");
-            progress.textContent = badges + " Skill Badges";
-
-            card.append(medal, participantName, progress);
-            podium.appendChild(card);
-        });
-
-        // Search participants
-        searchInput.addEventListener("input", function () {
-            const query = this.value.toLowerCase();
-            let visibleCount = 0;
-
-            rows.forEach(row => {
-                const matches = row.textContent.toLowerCase().includes(query);
-
-                row.style.display = matches ? "" : "none";
-
-                if (matches) visibleCount++;
-            });
-
-            noResults.style.display = visibleCount === 0 ? "block" : "none";
-        });
     }
+
 </script>
 
 </body>
