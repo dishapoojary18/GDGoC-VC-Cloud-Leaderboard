@@ -25,7 +25,7 @@ required_tasks = ["The Basics of Google Cloud Compute",
     "Explore Generative AI in Agent Platform"]
 
 sheet_id = os.environ.get("SHEET_ID")
-sheet_name = urllib.parse.quote("Form Responses 1")
+sheet_name = urllib.parse.quote("Leaderboard Data")
 url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
 df = pd.read_csv(url)
 
