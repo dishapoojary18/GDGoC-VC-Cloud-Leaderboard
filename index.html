@@ -169,6 +169,72 @@
                 padding: 16px;
             }
         }
+    
+        /* Participant rank search */
+        .rank-search-section {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            border: 1px solid #e5e7eb;
+        }
+        .rank-search-section h2 {
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+        .rank-search-section .search-help {
+            color: #5f6368;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+        .rank-search-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #dadce0;
+            border-radius: 10px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color .2s, box-shadow .2s;
+        }
+        .rank-search-input:focus {
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, .12);
+        }
+        .rank-search-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .rank-search-result {
+            padding: 18px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: #f8faff;
+        }
+        .rank-search-result p {
+            margin: 5px 0;
+            color: #5f6368;
+            line-height: 1.45;
+            overflow-wrap: anywhere;
+        }
+        .rank-search-result .result-rank {
+            color: #1a73e8;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .rank-search-result .result-name {
+            color: #202124;
+            font-size: 17px;
+            font-weight: 700;
+        }
+        .rank-search-empty {
+            color: #5f6368;
+            margin-top: 14px;
+            line-height: 1.5;
+        }
+
     </style>
 </head>
 
@@ -214,6 +280,24 @@
         </div>
 
     </div>
+
+
+    <!-- Search participant rank -->
+    <section class="rank-search-section" aria-labelledby="rankSearchHeading">
+        <h2 id="rankSearchHeading">🔎 Search Your Rank</h2>
+        <p class="search-help">Enter your name to find your leaderboard rank and completed skill badges.</p>
+        <label for="rankSearchInput" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Search participant name</label>
+        <input
+            type="search"
+            id="rankSearchInput"
+            class="rank-search-input"
+            placeholder="Type your name..."
+            autocomplete="off"
+            aria-describedby="rankSearchMessage"
+        >
+        <div id="rankSearchResults" class="rank-search-results" aria-live="polite"></div>
+        <p id="rankSearchMessage" class="rank-search-empty">Start typing your name to see your result.</p>
+    </section>
 
     <!-- Leaderboard -->
 
@@ -2263,6 +2347,63 @@
     </footer>
 
 </div>
+
+
+<script>
+    // Search data contains only rank, display name, and completed badge count.
+    (function () {
+        "use strict";
+
+        const participants = [{"rank":1,"name":"A Prajna shetty","badges":10},{"rank":2,"name":"Adithi L","badges":10},{"rank":3,"name":"B Gurukiran","badges":10},{"rank":4,"name":"Chethan","badges":10},{"rank":5,"name":"Disha K","badges":10},{"rank":6,"name":"Ganya M","badges":10},{"rank":7,"name":"Hithashree","badges":10},{"rank":8,"name":"Jeevith.k","badges":10},{"rank":9,"name":"K.Deepika Prabhu","badges":10},{"rank":10,"name":"Keerthan","badges":10},{"rank":11,"name":"Lakshyajith K S","badges":10},{"rank":12,"name":"Likhitha rai","badges":10},{"rank":13,"name":"MAHIMA P ACHARYA","badges":10},{"rank":14,"name":"Manvith","badges":10},{"rank":15,"name":"Nihali Naik","badges":10},{"rank":16,"name":"Nishanth N M","badges":10},{"rank":17,"name":"Nishmitha K","badges":10},{"rank":18,"name":"PRANAM K","badges":10},{"rank":19,"name":"Prakrithi CH","badges":10},{"rank":20,"name":"Pramitha Manila","badges":10},{"rank":21,"name":"Preethitha","badges":10},{"rank":22,"name":"Preethitha TM","badges":10},{"rank":23,"name":"Rakshitha","badges":10},{"rank":24,"name":"Roopali","badges":10},{"rank":25,"name":"Savitha","badges":10},{"rank":26,"name":"Sharath","badges":10},{"rank":27,"name":"Shravya H B","badges":10},{"rank":28,"name":"Sinchana B","badges":10},{"rank":29,"name":"Srishti","badges":10},{"rank":30,"name":"Sthuthi Rai","badges":10},{"rank":31,"name":"Susha","badges":10},{"rank":32,"name":"Theeksha J","badges":10},{"rank":33,"name":"Thrupthi M","badges":10},{"rank":34,"name":"Trshika Rai","badges":10},{"rank":35,"name":"VIJETH","badges":10},{"rank":36,"name":"Vaishak k","badges":10},{"rank":37,"name":"Varsha M","badges":10},{"rank":38,"name":"chashma p m","badges":10},{"rank":39,"name":"keerthi","badges":10},{"rank":40,"name":"Manasvi Shetty K","badges":9},{"rank":41,"name":"Sannidhi prabhu","badges":9},{"rank":42,"name":"Dhanyashree","badges":8},{"rank":43,"name":"M S Pooja","badges":8},{"rank":44,"name":"Manyashree","badges":8},{"rank":45,"name":"Pallavi R.P","badges":8},{"rank":46,"name":"Preksha","badges":8},{"rank":47,"name":"Rithika sri","badges":8},{"rank":48,"name":"Subhiksha","badges":8},{"rank":49,"name":"Dhanya","badges":7},{"rank":50,"name":"GOWHITHA S","badges":7},{"rank":51,"name":"Bhavitha D S","badges":5},{"rank":52,"name":"Chaithra","badges":5},{"rank":53,"name":"Deeksha","badges":5},{"rank":54,"name":"Greeshma","badges":5},{"rank":55,"name":"Hithashree","badges":5},{"rank":56,"name":"Nishchitha","badges":5},{"rank":57,"name":"Kushal M D","badges":4},{"rank":58,"name":"Prathyusha K U","badges":4},{"rank":59,"name":"Kruthik B Rai","badges":3},{"rank":60,"name":"Mahalasa Pai B","badges":3},{"rank":61,"name":"Manvitha","badges":3},{"rank":62,"name":"Meghashree H K","badges":3},{"rank":63,"name":"Chaithra C","badges":2},{"rank":64,"name":"Chethana","badges":2},{"rank":65,"name":"Siri Shenoy","badges":2},{"rank":66,"name":"Ananya","badges":1},{"rank":67,"name":"Anusha K K","badges":1},{"rank":68,"name":"Deepika","badges":1},{"rank":69,"name":"Gaurav c","badges":1},{"rank":70,"name":"Ishan H D","badges":1},{"rank":71,"name":"Janani B G","badges":1},{"rank":72,"name":"Janani B S","badges":1},{"rank":73,"name":"Ranjan G","badges":1},{"rank":74,"name":"Ranjith bk","badges":1},{"rank":75,"name":"Rishika","badges":1},{"rank":76,"name":"Sharanya","badges":1},{"rank":77,"name":"Swasthi S Rai","badges":1},{"rank":78,"name":"Thanushree","badges":1},{"rank":79,"name":"Thrisha","badges":1},{"rank":80,"name":"Yashaswi S M","badges":1},{"rank":81,"name":"A.V.Pooja","badges":0},{"rank":82,"name":"ABNEESH KUMAR SHARMA","badges":0},{"rank":83,"name":"Akash rai","badges":0},{"rank":84,"name":"Akshitha","badges":0},{"rank":85,"name":"Akshitha m c","badges":0},{"rank":86,"name":"Ananya","badges":0},{"rank":87,"name":"Anushree","badges":0},{"rank":88,"name":"Anushree","badges":0},{"rank":89,"name":"Anvitha A R","badges":0},{"rank":90,"name":"Apeksha","badges":0},{"rank":91,"name":"B R Chinthan Kumar","badges":0},{"rank":92,"name":"B.Namitha","badges":0},{"rank":93,"name":"Bhuvanesh","badges":0},{"rank":94,"name":"Chaithanya","badges":0},{"rank":95,"name":"Chinthana N","badges":0},{"rank":96,"name":"Deeksha","badges":0},{"rank":97,"name":"Deekshith kumar A","badges":0},{"rank":98,"name":"Dhanish Amin","badges":0},{"rank":99,"name":"Dhrithi T P","badges":0},{"rank":100,"name":"Divya K S","badges":0},{"rank":101,"name":"Dravyashree rai","badges":0},{"rank":102,"name":"Gagan p","badges":0},{"rank":103,"name":"Gagana","badges":0},{"rank":104,"name":"Harsha P","badges":0},{"rank":105,"name":"Harshith p rai","badges":0},{"rank":106,"name":"Hithesh","badges":0},{"rank":107,"name":"Janani B S","badges":0},{"rank":108,"name":"Jeshma","badges":0},{"rank":109,"name":"Jithesh Kumar","badges":0},{"rank":110,"name":"Jithesh.N","badges":0},{"rank":111,"name":"Jyothi","badges":0},{"rank":112,"name":"K Pavithra","badges":0},{"rank":113,"name":"Karan shetty","badges":0},{"rank":114,"name":"Keerthan A","badges":0},{"rank":115,"name":"Keerthan P","badges":0},{"rank":116,"name":"Keerthana","badges":0},{"rank":117,"name":"Kowshik.M","badges":0},{"rank":118,"name":"Kruthik B Rai","badges":0},{"rank":119,"name":"Kruthika NS","badges":0},{"rank":120,"name":"Kshama N S","badges":0},{"rank":121,"name":"Kshira M","badges":0},{"rank":122,"name":"Kushika D","badges":0},{"rank":123,"name":"Kushith K","badges":0},{"rank":124,"name":"Kushith K","badges":0},{"rank":125,"name":"Lavanya K","badges":0},{"rank":126,"name":"Likhith kumar","badges":0},{"rank":127,"name":"Manasa","badges":0},{"rank":128,"name":"Manvitha","badges":0},{"rank":129,"name":"Mithun","badges":0},{"rank":130,"name":"Mithun K","badges":0},{"rank":131,"name":"Mithun K","badges":0},{"rank":132,"name":"Moksha","badges":0},{"rank":133,"name":"Nandesh Gowda","badges":0},{"rank":134,"name":"Navaneeth K S","badges":0},{"rank":135,"name":"Navyashree","badges":0},{"rank":136,"name":"Neeraj S","badges":0},{"rank":137,"name":"Nikhil G R Rai","badges":0},{"rank":138,"name":"Nireeksha AR","badges":0},{"rank":139,"name":"Nishchitha","badges":0},{"rank":140,"name":"Niveditha B","badges":0},{"rank":141,"name":"Niveditha B","badges":0},{"rank":142,"name":"Pavanraj","badges":0},{"rank":143,"name":"Pooja A","badges":0},{"rank":144,"name":"Pradyumna Prabhu","badges":0},{"rank":145,"name":"Prajna. P","badges":0},{"rank":146,"name":"Prajwala shivanaik Baganavar","badges":0},{"rank":147,"name":"Prakhyath Acharya","badges":0},{"rank":148,"name":"Pramod p","badges":0},{"rank":149,"name":"Prathiksha","badges":0},{"rank":150,"name":"Preethal D V","badges":0},{"rank":151,"name":"Punya","badges":0},{"rank":152,"name":"Rajesh Kumar P","badges":0},{"rank":153,"name":"Rishika","badges":0},{"rank":154,"name":"Rithesh K","badges":0},{"rank":155,"name":"Sachin Rao K","badges":0},{"rank":156,"name":"Sachin Upparna","badges":0},{"rank":157,"name":"Sachitha","badges":0},{"rank":158,"name":"Sahithya.B.S","badges":0},{"rank":159,"name":"Samarth","badges":0},{"rank":160,"name":"Sathwik MG","badges":0},{"rank":161,"name":"Sathyaprasad P V","badges":0},{"rank":162,"name":"Sharanya","badges":0},{"rank":163,"name":"Shravan.k","badges":0},{"rank":164,"name":"Shravya CH","badges":0},{"rank":165,"name":"Shreya","badges":0},{"rank":166,"name":"Shreyas","badges":0},{"rank":167,"name":"Sinchana Shetty","badges":0},{"rank":168,"name":"Siri Shenoy","badges":0},{"rank":169,"name":"Skanda Prasad K","badges":0},{"rank":170,"name":"Srijan","badges":0},{"rank":171,"name":"Sumukha S H","badges":0},{"rank":172,"name":"Sushanth K k","badges":0},{"rank":173,"name":"Thanmayi","badges":0},{"rank":174,"name":"Thanvi","badges":0},{"rank":175,"name":"Tharun k","badges":0},{"rank":176,"name":"Thrisha","badges":0},{"rank":177,"name":"Vaibhav Jayarama","badges":0},{"rank":178,"name":"Veekshitha M C","badges":0},{"rank":179,"name":"Vidyashree Pai","badges":0},{"rank":180,"name":"Vishwas Nayak","badges":0},{"rank":181,"name":"Yakshitha","badges":0},{"rank":182,"name":"Yashmitha","badges":0},{"rank":183,"name":"shravya.B","badges":0}];
+        const searchInput = document.getElementById("rankSearchInput");
+        const resultsContainer = document.getElementById("rankSearchResults");
+        const message = document.getElementById("rankSearchMessage");
+
+        function renderSearchResults() {
+            const query = searchInput.value.trim().toLocaleLowerCase();
+            resultsContainer.replaceChildren();
+
+            if (!query) {
+                message.textContent = "Start typing your name to see your result.";
+                return;
+            }
+
+            const matches = participants.filter(function (person) {
+                return person.name.toLocaleLowerCase().includes(query);
+            });
+
+            if (matches.length === 0) {
+                message.textContent = "No matching name found. Check the spelling and try again.";
+                return;
+            }
+
+            message.textContent = matches.length === 1
+                ? "1 matching participant found."
+                : matches.length + " matching participants found.";
+
+            matches.forEach(function (person) {
+                const card = document.createElement("article");
+                card.className = "rank-search-result";
+
+                const rank = document.createElement("div");
+                rank.className = "result-rank";
+                rank.textContent = "Rank: #" + person.rank;
+
+                const name = document.createElement("p");
+                name.className = "result-name";
+                name.textContent = person.name;
+
+                const badges = document.createElement("p");
+                badges.textContent = "Badges completed: " + person.badges;
+
+                card.append(rank, name, badges);
+                resultsContainer.appendChild(card);
+            });
+        }
+
+        searchInput.addEventListener("input", renderSearchResults);
+    })();
+</script>
 
 <script>
     // LEADERBOARD
