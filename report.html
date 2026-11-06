@@ -144,6 +144,82 @@
             z-index: 9999;
         }
 
+
+        /* Search Your Rank */
+        .search-section {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .search-section h2 {
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .search-description {
+            color: #5f6368;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        #rankSearchInput {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #dadce0;
+            border-radius: 10px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        #rankSearchInput:focus {
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.12);
+        }
+
+        #rankSearchResults {
+            margin-top: 16px;
+        }
+
+        .search-results-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 0;
+        }
+
+        .search-results-table th,
+        .search-results-table td {
+            padding: 13px 12px;
+            text-align: left;
+            border-bottom: 1px solid #eeeeee;
+            font-size: 14px;
+        }
+
+        .search-results-table th {
+            background: #f1f3f4;
+            color: #3c4043;
+        }
+
+        .search-message {
+            color: #5f6368;
+            padding: 12px 0;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            .search-section {
+                padding: 16px;
+            }
+
+            .search-results-table th,
+            .search-results-table td {
+                padding: 11px 8px;
+                font-size: 13px;
+            }
+        }
+
         @media (max-width: 600px) {
             body {
                 padding: 12px;
@@ -214,6 +290,23 @@
         </div>
 
     </div>
+
+
+    <!-- Search Your Rank -->
+    <section class="search-section" aria-labelledby="searchHeading">
+        <h2 id="searchHeading">🔎 Search Your Rank</h2>
+        <p class="search-description">Enter your name to find your rank and badges completed.</p>
+        <input
+            type="search"
+            id="rankSearchInput"
+            placeholder="Type your name..."
+            aria-label="Search leaderboard by name"
+            autocomplete="off"
+        >
+        <div id="rankSearchResults" aria-live="polite">
+            <p class="search-message">Start typing your name to see your results.</p>
+        </div>
+    </section>
 
     <!-- Leaderboard -->
 
@@ -295,6 +388,89 @@
             }
         }
     }
+
+
+    // SEARCH YOUR RANK
+    (function () {
+        const searchInput = document.getElementById("rankSearchInput");
+        const resultsContainer = document.getElementById("rankSearchResults");
+        const leaderboard = document.querySelector(".leaderboard");
+
+        if (!searchInput || !resultsContainer || !leaderboard) {
+            return;
+        }
+
+        function showMessage(message) {
+            resultsContainer.replaceChildren();
+            const paragraph = document.createElement("p");
+            paragraph.className = "search-message";
+            paragraph.textContent = message;
+            resultsContainer.appendChild(paragraph);
+        }
+
+        function renderResults(matches) {
+            resultsContainer.replaceChildren();
+
+            if (matches.length === 0) {
+                showMessage("No matching name found. Please check the spelling and try again.");
+                return;
+            }
+
+            const wrapper = document.createElement("div");
+            wrapper.className = "table-wrapper";
+
+            const resultTable = document.createElement("table");
+            resultTable.className = "search-results-table";
+
+            const thead = document.createElement("thead");
+            const headerRow = document.createElement("tr");
+
+            ["Rank", "Name", "Badges Completed"].forEach((label) => {
+                const th = document.createElement("th");
+                th.textContent = label;
+                headerRow.appendChild(th);
+            });
+
+            thead.appendChild(headerRow);
+            resultTable.appendChild(thead);
+
+            const tbody = document.createElement("tbody");
+
+            matches.forEach((match) => {
+                const row = document.createElement("tr");
+
+                [match.rank, match.name, match.badges].forEach((value) => {
+                    const cell = document.createElement("td");
+                    cell.textContent = value;
+                    row.appendChild(cell);
+                });
+
+                tbody.appendChild(row);
+            });
+
+            resultTable.appendChild(tbody);
+            wrapper.appendChild(resultTable);
+            resultsContainer.appendChild(wrapper);
+        }
+
+        searchInput.addEventListener("input", function () {
+            const query = searchInput.value.trim().toLowerCase();
+
+            if (!query) {
+                showMessage("Start typing your name to see your results.");
+                return;
+            }
+
+            const rows = Array.from(leaderboard.querySelectorAll("tbody tr"));
+            const matches = rows.map((row) => ({
+                rank: row.cells[0]?.textContent.trim() || "",
+                name: row.cells[1]?.textContent.trim() || "",
+                badges: row.cells[2]?.textContent.trim() || ""
+            })).filter((person) => person.name.toLowerCase().includes(query));
+
+            renderResults(matches);
+        });
+    })();
 
     // CELEBRATION CONFETTI AND SPARKLES
 
