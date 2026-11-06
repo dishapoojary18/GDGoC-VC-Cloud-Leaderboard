@@ -49,7 +49,7 @@ Rank,Participant ID,Display Name,Public Profile URL,Badges Completed,Progress,Co
 48,VC065,Subhiksha,https://www.skills.google/public_profiles/992492ac-0fcd-4695-9301-1d30e7207b02,8,80%,"The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Explore Generative AI in Agent Platform",Milestone 2,Not applicable
 49,VC099,Dhanya,https://www.skills.google/public_profiles/f1be5fb7-e242-4326-a40b-2be08c487de4,7,70%,"Configure Service Accounts and IAM Roles for Google Cloud, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform",Milestone 2,Not applicable
 50,VC115,GOWHITHA S,https://www.skills.google/public_profiles/fec88a07-c9a6-496f-9dd4-ab3ee24b2d0e,7,70%,"The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Build a Website on Google Cloud, Create Your First Gemini Enterprise Application",Milestone 2,Not applicable
-51,VC053,Greeshma,https://www.skills.google/public_profiles/a7712e6a-40fc-4eb0-ade0-9ef0ac84b660,6,60%,"The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Create Your First Gemini Enterprise Application",No Milestone,Not applicable
+51,VC053,Greeshma,https://www.skills.google/public_profiles/a7712e6a-40fc-4eb0-ade0-9ef0ac84b660,7,70%,"The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Create Your First Gemini Enterprise Application, Explore Generative AI in Agent Platform",No Milestone,Not applicable
 52,VC173,Bhavitha D S,https://www.skills.google/public_profiles/ef6a0667-cce3-4217-b658-e43e62f5a0de,5,50%,"The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio, Create Your First Gemini Enterprise Application",No Milestone,Not applicable
 53,VC029,Chaithra,https://www.skills.google/public_profiles/dfca916b-b5e8-4191-9f3b-fb41518f94a5,5,50%,"Develop AI-Powered Prototypes in Google AI Studio, Analyze Images with the Cloud Vision API, Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Explore Generative AI in Agent Platform",No Milestone,Not applicable
 54,VC057,Deeksha,https://www.skills.google/public_profiles/152f4927-66af-4774-8d57-4fdfb19d1aa7,5,50%,"The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Develop AI-Powered Prototypes in Google AI Studio, Build a Website on Google Cloud, Store, Process, and Manage Data on Google Cloud - Console",Milestone 2,Not applicable
@@ -58,123 +58,123 @@ Rank,Participant ID,Display Name,Public Profile URL,Badges Completed,Progress,Co
 57,VC092,Kushal M D,https://www.skills.google/public_profiles/3da55fa1-0603-4108-9871-e35552053401,4,40%,"Create Your First Gemini Enterprise Application, Store, Process, and Manage Data on Google Cloud - Console, Using the Google Cloud Speech API, Explore Generative AI in Agent Platform",Milestone 1,Not applicable
 58,VC078,Prathyusha K U,https://www.skills.google/public_profiles/6c47ec8f-4e65-4451-b5b2-be58e75956bb,4,40%,"The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs, Develop AI-Powered Prototypes in Google AI Studio",Milestone 1,Not applicable
 59,VC110,Kruthik B Rai,https://www.skills.google/public_profiles/1d2370e1-caae-4eb7-b33b-505572a8f421,3,30%,"The Basics of Google Cloud Compute, Implement Speech and Language Solutions with Pre-trained APIs, Analyze Images with the Cloud Vision API",No Milestone,Not applicable
-60,VC087,Mahalasa Pai B,https://www.skills.google/public_profiles/b2bb8cb6-38c3-41d6-aae1-950e5cbc27e3,3,30%,"The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs",Milestone 1,Not applicable
-61,VC177,Manvitha,https://www.skills.google/public_profiles/eef11cc9-c77c-439e-ba4e-e9ee44fd7b69,3,30%,"The Basics of Google Cloud Compute, Develop AI-Powered Prototypes in Google AI Studio, Create Your First Gemini Enterprise Application",No Milestone,Not applicable
-62,VC032,Meghashree H K,https://www.skills.google/public_profiles/35512a65-b45e-41dc-abc1-77fb7a317144,3,30%,"The Basics of Google Cloud Compute, Develop AI-Powered Prototypes in Google AI Studio, Create Your First Gemini Enterprise Application",No Milestone,Not applicable
-63,VC061,Chaithra C,https://www.skills.google/public_profiles/c884188d-c5f3-4948-8b39-520d9abbe24b,2,20%,"The Basics of Google Cloud Compute, Implement Speech and Language Solutions with Pre-trained APIs",No Milestone,Not applicable
+60,VC038,Kshama N S,https://www.skills.google/public_profiles/3afc4106-8e5f-4ab2-be04-e99698b690b8,3,30%,"The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs",No Milestone,Not applicable
+61,VC087,Mahalasa Pai B,https://www.skills.google/public_profiles/b2bb8cb6-38c3-41d6-aae1-950e5cbc27e3,3,30%,"The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud, Implement Speech and Language Solutions with Pre-trained APIs",Milestone 1,Not applicable
+62,VC177,Manvitha,https://www.skills.google/public_profiles/eef11cc9-c77c-439e-ba4e-e9ee44fd7b69,3,30%,"The Basics of Google Cloud Compute, Develop AI-Powered Prototypes in Google AI Studio, Create Your First Gemini Enterprise Application",No Milestone,Not applicable
+63,VC032,Meghashree H K,https://www.skills.google/public_profiles/35512a65-b45e-41dc-abc1-77fb7a317144,3,30%,"The Basics of Google Cloud Compute, Develop AI-Powered Prototypes in Google AI Studio, Create Your First Gemini Enterprise Application",No Milestone,Not applicable
 64,VC071,Chethana,https://www.skills.google/public_profiles/103c9098-af7e-4c90-b519-aa40e53a4080,2,20%,"The Basics of Google Cloud Compute, Implement Speech and Language Solutions with Pre-trained APIs",No Milestone,Not applicable
 65,VC109,Kushith K,https://www.skills.google/public_profiles/4f1c6675-cb01-4923-be5c-8473f864956b,2,20%,"The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud",No Milestone,Not applicable
 66,VC168,Siri Shenoy,https://www.skills.google/public_profiles/e7f6af7d-05bc-47e9-8556-2d374af879ec,2,20%,"The Basics of Google Cloud Compute, Configure Service Accounts and IAM Roles for Google Cloud",No Milestone,Not applicable
 67,VC069,Ananya,https://www.skills.google/public_profiles/0fbcc9dd-babc-493f-9166-c79ca7a351a5,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
 68,VC104,Anusha K K,https://www.skills.google/public_profiles/413ffbf9-118c-4713-aa52-dbcf5b606dc6,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
-69,VC160,Deepika,https://www.skills.google/public_profiles/c6473697-d5bd-4415-90fe-4c7a8f24f44b,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
-70,VC128,Gaurav c,https://www.skills.google/public_profiles/68553449-70ad-4956-bd29-6586903f161d,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
-71,VC036,Ishan H D,https://www.skills.google/public_profiles/3f3f6a2c-2bb8-4b96-afbf-d6bfb4808843,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
-72,VC037,Janani B G,https://www.skills.google/public_profiles/08190980-ce8a-4388-aa9b-219efdb56867,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
-73,VC136,Janani B S,https://www.skills.google/public_profiles/86332775-2f3b-4d03-8caf-be7e285d4734,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
-74,VC038,Kshama N S,https://www.skills.google/public_profiles/3afc4106-8e5f-4ab2-be04-e99698b690b8,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
+69,VC061,Chaithra C,https://www.skills.google/public_profiles/c884188d-c5f3-4948-8b39-520d9abbe24b,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
+70,VC160,Deepika,https://www.skills.google/public_profiles/c6473697-d5bd-4415-90fe-4c7a8f24f44b,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
+71,VC128,Gaurav c,https://www.skills.google/public_profiles/68553449-70ad-4956-bd29-6586903f161d,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
+72,VC036,Ishan H D,https://www.skills.google/public_profiles/3f3f6a2c-2bb8-4b96-afbf-d6bfb4808843,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
+73,VC037,Janani B G,https://www.skills.google/public_profiles/08190980-ce8a-4388-aa9b-219efdb56867,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
+74,VC136,Janani B S,https://www.skills.google/public_profiles/86332775-2f3b-4d03-8caf-be7e285d4734,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
 75,VC017,Ranjan G,https://www.skills.google/public_profiles/25194267-5ce2-4c49-9c43-4855141e4e82,1,10%,Explore Generative AI in Agent Platform,No Milestone,Not applicable
 76,VC020,Ranjith bk,https://www.skills.google/public_profiles/98de6ae8-986b-4606-b3cd-d75e95d4280c,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
 77,VC169,Rishika,https://www.skills.google/public_profiles/77c10a36-02e8-4c4e-9199-006d5e2e260c,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
 78,VC060,Sharanya,https://www.skills.google/public_profiles/cfd7cad1-516b-4840-9365-dc3f931f00bf,1,10%,Create Your First Gemini Enterprise Application,No Milestone,Not applicable
 79,VC146,Swasthi S Rai,https://www.skills.google/public_profiles/4c0b65fe-d2b3-4cd3-a813-81687cf3c636,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
 80,VC011,Thanushree,https://www.skills.google/public_profiles/7b4a2075-d0b5-4f2c-a1dc-e0023c7d2c95,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
-81,VC170,Thrisha,https://www.skills.google/public_profiles/97272dcb-abb6-4a67-9534-2f34ad8ef78b,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
-82,VC095,Yashaswi S M,https://www.skills.google/public_profiles/cb98763c-73d2-491b-afca-b212a433ab18,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
-83,VC148,A.V.Pooja,https://www.skills.google/public_profiles/d52b4d1f-b885-4dd1-ac2b-e54cf308ef51,0,0%,,No Milestone,Not applicable
-84,VC183,ABNEESH KUMAR SHARMA,https://www.skills.google/public_profiles/7f4504c3-c8fd-411f-be0d-a386989d18e4,0,0%,,No Milestone,No Badge
-85,VC111,Akash rai,https://www.skills.google/public_profiles/208fefac-0317-47b2-b985-d9da3dda37b6,0,0%,,No Milestone,Not applicable
-86,VC156,Akshitha,https://www.skills.google/public_profiles/5492a1fb-7614-494c-9511-d58e611cb073,0,0%,,No Milestone,Not applicable
-87,VC126,Akshitha m c,https://www.skills.google/public_profiles/289a4545-67c4-48bf-8c7d-0a070d70236d,0,0%,,No Milestone,Not applicable
-88,VC123,Ananya,https://www.skills.google/public_profiles/071a9f9e-1ec4-49a0-a8d1-967fb606daf0,0,0%,,No Milestone,Not applicable
-89,VC004,Anushree,https://www.skills.google/public_profiles/94a9249e-4e32-4507-beab-fb8917d9390e,0,0%,,No Milestone,Not applicable
-90,VC131,Anushree,https://www.skills.google/public_profiles/7896a6e2-c861-47d8-ab17-e162028a0079,0,0%,,No Milestone,Not applicable
-91,VC114,Anvitha A R,https://www.skills.google/public_profiles/e44f9d78-a753-4232-8dd0-883677ccaeba,0,0%,,No Milestone,Not applicable
-92,VC102,Apeksha,https://www.skills.google/public_profiles/3557d9c0-1af2-43a6-b354-70bc4c8a870a,0,0%,,No Milestone,Not applicable
-93,VC035,B R Chinthan Kumar,https://www.skills.google/public_profiles/8bdaf159-f465-473c-85d7-dbeb598f531d,0,0%,,No Milestone,Not applicable
-94,VC167,B.Namitha,https://www.skills.google/public_profiles/a216fb9e-8233-44f9-80b9-e86fb8e7093c,0,0%,,No Milestone,Not applicable
-95,VC062,Bhuvanesh,https://www.skills.google/public_profiles/bb7284a7-8cb7-4e3f-9cfa-805dbad13332,0,0%,,No Milestone,Not applicable
-96,VC157,Chaithanya,https://www.skills.google/public_profiles/16d4fb4d-cee1-4b90-b335-a5146569d139,0,0%,,No Milestone,Not applicable
-97,VC152,Chinthana N,https://www.skills.google/public_profiles/7466b31b-98bf-4766-8311-3c6e2b4c6829,0,0%,,No Milestone,Not applicable
-98,VC012,Deeksha,https://www.skills.google/public_profiles/3f8cf238-eb32-4f53-89ca-3602eb7c0e56,0,0%,,No Milestone,Not applicable
-99,VC139,Deekshith kumar A,https://www.skills.google/public_profiles/99780072-a838-45bc-928c-1cbddc36cb9c,0,0%,,No Milestone,Not applicable
-100,VC182,Dhanish Amin,https://www.skills.google/public_profiles/d37fd2ff-301d-479a-845f-404bd496a620,0,0%,,No Milestone,Not applicable
-101,VC159,Dhrithi T P,https://www.skills.google/public_profiles/b8f9e04c-bd32-4159-8528-4d409c9c0dec,0,0%,,No Milestone,Not applicable
-102,VC132,Divya K S,https://www.skills.google/public_profiles/1d829fae-0d51-4970-83a7-3836a96418bc,0,0%,,No Milestone,Not applicable
-103,VC072,Dravyashree rai,https://www.skills.google/public_profiles/19ef88b8-da9e-4b02-af55-063540ae7af7,0,0%,,No Milestone,Not applicable
-104,VC049,Gagan p,https://www.skills.google/public_profiles/6cb4c327-4c61-4801-abf2-b7ee67ba09b2,0,0%,,No Milestone,Not applicable
-105,VC003,Gagana,https://www.skills.google/public_profiles/3302d942-c27c-4316-89e9-4e72cb86aefe,0,0%,,No Milestone,Not applicable
-106,VC106,Harsha P,https://www.skills.google/public_profiles/34ed3124-7b64-4a95-b0ea-2fe90423fdc3,0,0%,,No Milestone,Not applicable
-107,VC079,Harshith p rai,https://www.skills.google/public_profiles/d23943e8-30b0-47be-b9ca-3cefd0deb5c5,0,0%,,No Milestone,Not applicable
-108,VC118,Hithesh,https://www.skills.google/public_profiles/478e26d2-4698-4584-91ce-907b6970d189,0,0%,,No Milestone,Not applicable
-109,VC094,Janani B S,https://www.skills.google/public_profiles/4c94c8cf-7f6d-4c92-8a11-77c39e26ca94,0,0%,,No Milestone,Not applicable
-110,VC127,Jeshma,https://www.skills.google/public_profiles/e2cb289b-387b-4eee-9a57-1212323e9d90,0,0%,,No Milestone,Not applicable
-111,VC121,Jithesh Kumar,https://www.skills.google/public_profiles/1b4cd55d-38aa-4c11-b4c6-36fcbfc683b6,0,0%,,No Milestone,Not applicable
-112,VC090,Jithesh.N,https://www.skills.google/public_profiles/1d177d6c-a604-4ef4-a865-25746c77271a,0,0%,,No Milestone,Not applicable
-113,VC135,Jyothi,https://www.skills.google/public_profiles/c3ffcce5-e3fd-478d-a54b-5a3a3d8c4298,0,0%,,No Milestone,Not applicable
-114,VC113,K Pavithra,https://www.skills.google/public_profiles/efed39d0-5405-4348-a3f5-ca7ced3bc685,0,0%,,No Milestone,Not applicable
-115,VC005,Karan shetty,https://www.skills.google/public_profiles/4169fb6b-2cf6-453b-acb5-47eb71c48014,0,0%,,No Milestone,Not applicable
-116,VC151,Keerthan A,https://www.skills.google/public_profiles/67e8cd6c-deab-4d72-8cfa-54801e0f6581,0,0%,,No Milestone,Not applicable
-117,VC142,Keerthan P,https://www.skills.google/public_profiles/ebcf4fc4-7979-4ddf-ae40-5a673c51779b,0,0%,,No Milestone,Not applicable
-118,VC075,Keerthana,https://www.skills.google/public_profiles/cdd60629-3ea4-4824-9600-8a80ac75363c,0,0%,,No Milestone,Not applicable
-119,VC171,Kowshik.M,https://www.skills.google/public_profiles/4c0d9237-e1b8-439b-a57b-2165a9b2b3c5,0,0%,,No Milestone,Not applicable
-120,VC040,Kruthik B Rai,https://www.skills.google/public_profiles/67e9e81e-f981-4fad-aa88-e332a10019f3,0,0%,,No Milestone,Not applicable
-121,VC153,Kruthika NS,https://www.skills.google/public_profiles/93c9f1ff-c205-4fe3-b4d5-5ccbeb6bb639,0,0%,,No Milestone,Not applicable
-122,VC076,Kshira M,https://www.skills.google/public_profiles/3c317837-197c-4701-9496-383f900e35f6,0,0%,,No Milestone,Not applicable
-123,VC116,Kushika D,https://www.skills.google/public_profiles/ff9d9fbe-f5d7-430c-8929-fe0aee806391,0,0%,,No Milestone,Not applicable
-124,VC108,Kushith K,https://www.skills.google/public_profiles/769e65d4-c03a-4d8a-9e32-e34ffe55fbfb,0,0%,,No Milestone,Not applicable
-125,VC155,Lavanya K,https://www.skills.google/public_profiles/9ca0e78e-033e-4eae-8024-71b4ad70b7fe,0,0%,,No Milestone,Not applicable
-126,VC143,Likhith kumar,https://www.skills.google/public_profiles/cb5500e3-24c8-4748-9b5b-1bbceedf9adb,0,0%,,No Milestone,Not applicable
-127,VC103,Manasa,https://www.skills.google/public_profiles/075f56ac-f72e-4522-b18c-0dde4c7d1783,0,0%,,No Milestone,Not applicable
-128,VC161,Manvitha,https://www.skills.google/public_profiles/befc4a50-d63c-4997-a538-829e677bf0a5,0,0%,,No Milestone,Not applicable
-129,VC055,Mithun,https://www.skills.google/public_profiles/f2dc3e0b-eff7-432d-ba67-0d453f510273,0,0%,,No Milestone,Not applicable
-130,VC137,Mithun K,https://www.skills.google/public_profiles/1bc3455b-4e30-40b4-8d70-e2608801cb15,0,0%,,No Milestone,Not applicable
-131,VC163,Mithun K,https://www.skills.google/public_profiles/4c5720b6-9f02-409a-8f67-9bf46d708406,0,0%,,No Milestone,Not applicable
-132,VC077,Moksha,https://www.skills.google/public_profiles/c6464704-eab5-4c3b-be61-67201c3634bb,0,0%,,No Milestone,Not applicable
-133,VC138,Nandesh Gowda,https://www.skills.google/public_profiles/15e6ffb2-579b-4a35-92fc-fa1d7526f5a2,0,0%,,No Milestone,Not applicable
-134,VC039,Navaneeth K S,https://www.skills.google/public_profiles/e0e926af-e1b5-4b6c-8f91-aeb62085e171,0,0%,,No Milestone,Not applicable
-135,VC175,Navyashree,https://www.skills.google/public_profiles/1f6d9f09-33b7-4da3-aa14-8b06f1440153,0,0%,,No Milestone,Not applicable
-136,VC033,Neeraj S,https://www.skills.google/public_profiles/ee02e614-e3b2-4674-8400-f09a23c12532,0,0%,,No Milestone,Not applicable
-137,VC119,Nikhil G R Rai,https://www.skills.google/public_profiles/2647bcda-36e7-4f5f-a58b-beb05a7f0f0a,0,0%,,No Milestone,Not applicable
-138,VC064,Nireeksha AR,https://www.skills.google/public_profiles/8b8620a2-1583-4304-a48d-25c74e565b35,0,0%,,No Milestone,Not applicable
-139,VC042,Nishchitha,https://www.skills.google/public_profiles/53ec0c8c-a822-4ca9-8666-c76f21327226,0,0%,,No Milestone,Not applicable
-140,VC046,Niveditha B,https://www.skills.google/public_profiles/178b9923-59ff-46db-8451-235b36c2f7f9,0,0%,,No Milestone,Not applicable
-141,VC166,Niveditha B,https://www.skills.google/public_profiles/2bb23643-4133-4cd3-b964-96d53ec04e33,0,0%,,No Milestone,Not applicable
-142,VC056,Pavanraj,https://www.skills.google/public_profiles/eb78fb21-0eff-41c1-a7db-e7e6e3721633,0,0%,,No Milestone,Not applicable
-143,VC180,Pooja A,https://www.skills.google/public_profiles/e22c224d-0440-462a-aae8-a25b2427e19b,0,0%,,No Milestone,Not applicable
-144,VC140,Pradyumna Prabhu,https://www.skills.google/public_profiles/c1d95e3b-52a3-43e2-882f-3722394f1748,0,0%,,No Milestone,Not applicable
-145,VC124,Prajna. P,https://www.skills.google/public_profiles/aabddc4f-0768-4018-aa5b-33285a2b82be,0,0%,,No Milestone,Not applicable
-146,VC154,Prajwala shivanaik Baganavar,https://www.skills.google/public_profiles/9f4d36a9-0508-4ef7-91f4-3b6617189c12,0,0%,,No Milestone,Not applicable
-147,VC141,Prakhyath Acharya,https://www.skills.google/public_profiles/158a2a8e-ca5d-4b47-8f06-fe990cb113ca,0,0%,,No Milestone,Not applicable
-148,VC178,Pramod p,https://www.skills.google/public_profiles/db27ace1-c0b2-48df-a779-0685cea60bf0,0,0%,,No Milestone,Not applicable
-149,VC120,Prathiksha,https://www.skills.google/public_profiles/54ff4b8d-07ea-4cc7-ae25-69fad0f03fc5,0,0%,,No Milestone,Not applicable
-150,VC080,Preethal D V,https://www.skills.google/public_profiles/a40b28e8-eb73-473c-b644-126eb1274189,0,0%,,No Milestone,Not applicable
-151,VC162,Punya,https://www.skills.google/public_profiles/1cb8cc75-3041-4083-b424-d98ffb9d3cef,0,0%,,No Milestone,Not applicable
-152,VC158,Rajesh Kumar P,https://www.skills.google/public_profiles/351cebf4-3b01-4698-aa55-88459642334e,0,0%,,No Milestone,Not applicable
-153,VC006,Rishika,https://www.skills.google/public_profiles/ded31f0c-48b2-4d4e-9801-a64a844fd63e,0,0%,,No Milestone,Not applicable
-154,VC164,Rithesh K,https://www.skills.google/public_profiles/ed2daf8a-2119-4dd4-b0a7-2cd160a0dd79,0,0%,,No Milestone,Not applicable
-155,VC179,Sachin Rao K,https://www.skills.google/public_profiles/a8f04ecd-e18f-47af-8441-4c707a9ac2dd,0,0%,,No Milestone,"Gemini Enterprise Agent Ready, Arcade - GEAR"
-156,VC001,Sachin Upparna,https://www.skills.google/public_profiles/088bd25d-f4f5-4280-ac3f-0a896db56cc1,0,0%,,No Milestone,"Gemini Enterprise Agent Ready, Arcade - GEAR"
-157,VC172,Sachitha,https://www.skills.google/public_profiles/aef2a1ad-498c-4665-8509-b4180914259c,0,0%,,No Milestone,Not applicable
-158,VC096,Sahithya.B.S,https://www.skills.google/public_profiles/4e78f186-b93e-457d-ad27-e26a68921df1,0,0%,,No Milestone,Not applicable
-159,VC086,Samarth,https://www.skills.google/public_profiles/0cfee530-3b8d-44c8-913f-fa303252343f,0,0%,,No Milestone,Not applicable
-160,VC181,Sathwik MG,https://www.skills.google/public_profiles/6663377c-f7a1-42ea-9bf6-f54b2d7b42f7,0,0%,,No Milestone,Not applicable
-161,VC105,Sathyaprasad P V,https://www.skills.google/public_profiles/a2f861e9-d9b7-40bd-aa3f-89ff784d4d0c,0,0%,,No Milestone,Not applicable
-162,VC147,Sharanya,https://www.skills.google/public_profiles/83139c28-fe78-41bf-95d4-74976eb2d2f5,0,0%,,No Milestone,Not applicable
-163,VC082,Shravan.k,https://www.skills.google/public_profiles/6d4816a8-96b4-4521-99e2-5650432cb0ab,0,0%,,No Milestone,Not applicable
-164,VC054,Shravya CH,https://www.skills.google/public_profiles/a3492081-f4ba-467c-9fe7-cfd6292641a1,0,0%,,No Milestone,Not applicable
-165,VC176,Shreya,https://www.skills.google/public_profiles/9c7a4490-c490-4e0a-b22e-c8e98338f2cf,0,0%,,No Milestone,Not applicable
-166,VC089,Shreyas,https://www.skills.google/public_profiles/67f206c4-3439-48d1-80b5-117d9ee64d42,0,0%,,No Milestone,Not applicable
-167,VC112,Sinchana Shetty,https://www.skills.google/public_profiles/5fd65660-4cc4-4cf4-8d7b-89c22030e8cf,0,0%,,No Milestone,Not applicable
-168,VC059,Siri Shenoy,https://www.skills.google/public_profiles/bd07dc88-e91a-43a8-826e-4ff39e096401,0,0%,,No Milestone,Not applicable
-169,VC031,Skanda Prasad K,https://www.skills.google/public_profiles/0342e638-b792-43af-913d-0bc738acf81e,0,0%,,No Milestone,Not applicable
-170,VC117,Srijan,https://www.skills.google/public_profiles/bbc3d336-945a-462d-a904-19cf8ddbe268,0,0%,,No Milestone,Not applicable
-171,VC088,Sumukha S H,https://www.skills.google/public_profiles/32eb5098-0915-4d24-946c-39aa2502143e,0,0%,,No Milestone,Not applicable
-172,VC134,Sushanth K k,https://www.skills.google/public_profiles/695498e2-3db4-4aa5-9c58-0fb4e037c340,0,0%,,No Milestone,Not applicable
-173,VC133,Thanmayi,https://www.skills.google/public_profiles/ba2af442-e89b-40fc-a217-b0aa9e05fe6b,0,0%,,No Milestone,Not applicable
-174,VC122,Thanvi,https://www.skills.google/public_profiles/f399a02d-b26f-4cdb-827b-5b1c5f2a16c4,0,0%,,No Milestone,Not applicable
-175,VC150,Tharun k,https://www.skills.google/public_profiles/3dd9c7d8-26d7-4e8d-9914-9f1924c91945,0,0%,,No Milestone,Not applicable
-176,VC073,Thrisha,https://www.skills.google/public_profiles/b65324d1-ff62-430c-9b60-f5ebbb647419,0,0%,,No Milestone,Not applicable
+81,VC095,Yashaswi S M,https://www.skills.google/public_profiles/cb98763c-73d2-491b-afca-b212a433ab18,1,10%,The Basics of Google Cloud Compute,No Milestone,Not applicable
+82,VC148,A.V.Pooja,https://www.skills.google/public_profiles/d52b4d1f-b885-4dd1-ac2b-e54cf308ef51,0,0%,,No Milestone,Not applicable
+83,VC183,ABNEESH KUMAR SHARMA,https://www.skills.google/public_profiles/7f4504c3-c8fd-411f-be0d-a386989d18e4,0,0%,,No Milestone,No Badge
+84,VC111,Akash rai,https://www.skills.google/public_profiles/208fefac-0317-47b2-b985-d9da3dda37b6,0,0%,,No Milestone,Not applicable
+85,VC156,Akshitha,https://www.skills.google/public_profiles/5492a1fb-7614-494c-9511-d58e611cb073,0,0%,,No Milestone,Not applicable
+86,VC126,Akshitha m c,https://www.skills.google/public_profiles/289a4545-67c4-48bf-8c7d-0a070d70236d,0,0%,,No Milestone,Not applicable
+87,VC123,Ananya,https://www.skills.google/public_profiles/071a9f9e-1ec4-49a0-a8d1-967fb606daf0,0,0%,,No Milestone,Not applicable
+88,VC004,Anushree,https://www.skills.google/public_profiles/94a9249e-4e32-4507-beab-fb8917d9390e,0,0%,,No Milestone,Not applicable
+89,VC131,Anushree,https://www.skills.google/public_profiles/7896a6e2-c861-47d8-ab17-e162028a0079,0,0%,,No Milestone,Not applicable
+90,VC114,Anvitha A R,https://www.skills.google/public_profiles/e44f9d78-a753-4232-8dd0-883677ccaeba,0,0%,,No Milestone,Not applicable
+91,VC102,Apeksha,https://www.skills.google/public_profiles/3557d9c0-1af2-43a6-b354-70bc4c8a870a,0,0%,,No Milestone,Not applicable
+92,VC035,B R Chinthan Kumar,https://www.skills.google/public_profiles/8bdaf159-f465-473c-85d7-dbeb598f531d,0,0%,,No Milestone,Not applicable
+93,VC167,B.Namitha,https://www.skills.google/public_profiles/a216fb9e-8233-44f9-80b9-e86fb8e7093c,0,0%,,No Milestone,Not applicable
+94,VC062,Bhuvanesh,https://www.skills.google/public_profiles/bb7284a7-8cb7-4e3f-9cfa-805dbad13332,0,0%,,No Milestone,Not applicable
+95,VC157,Chaithanya,https://www.skills.google/public_profiles/16d4fb4d-cee1-4b90-b335-a5146569d139,0,0%,,No Milestone,Not applicable
+96,VC152,Chinthana N,https://www.skills.google/public_profiles/7466b31b-98bf-4766-8311-3c6e2b4c6829,0,0%,,No Milestone,Not applicable
+97,VC012,Deeksha,https://www.skills.google/public_profiles/3f8cf238-eb32-4f53-89ca-3602eb7c0e56,0,0%,,No Milestone,Not applicable
+98,VC139,Deekshith kumar A,https://www.skills.google/public_profiles/99780072-a838-45bc-928c-1cbddc36cb9c,0,0%,,No Milestone,Not applicable
+99,VC182,Dhanish Amin,https://www.skills.google/public_profiles/d37fd2ff-301d-479a-845f-404bd496a620,0,0%,,No Milestone,Not applicable
+100,VC159,Dhrithi T P,https://www.skills.google/public_profiles/b8f9e04c-bd32-4159-8528-4d409c9c0dec,0,0%,,No Milestone,Not applicable
+101,VC132,Divya K S,https://www.skills.google/public_profiles/1d829fae-0d51-4970-83a7-3836a96418bc,0,0%,,No Milestone,Not applicable
+102,VC072,Dravyashree rai,https://www.skills.google/public_profiles/19ef88b8-da9e-4b02-af55-063540ae7af7,0,0%,,No Milestone,Not applicable
+103,VC049,Gagan p,https://www.skills.google/public_profiles/6cb4c327-4c61-4801-abf2-b7ee67ba09b2,0,0%,,No Milestone,Not applicable
+104,VC003,Gagana,https://www.skills.google/public_profiles/3302d942-c27c-4316-89e9-4e72cb86aefe,0,0%,,No Milestone,Not applicable
+105,VC106,Harsha P,https://www.skills.google/public_profiles/34ed3124-7b64-4a95-b0ea-2fe90423fdc3,0,0%,,No Milestone,Not applicable
+106,VC079,Harshith p rai,https://www.skills.google/public_profiles/d23943e8-30b0-47be-b9ca-3cefd0deb5c5,0,0%,,No Milestone,Not applicable
+107,VC118,Hithesh,https://www.skills.google/public_profiles/478e26d2-4698-4584-91ce-907b6970d189,0,0%,,No Milestone,Not applicable
+108,VC094,Janani B S,https://www.skills.google/public_profiles/4c94c8cf-7f6d-4c92-8a11-77c39e26ca94,0,0%,,No Milestone,Not applicable
+109,VC127,Jeshma,https://www.skills.google/public_profiles/e2cb289b-387b-4eee-9a57-1212323e9d90,0,0%,,No Milestone,Not applicable
+110,VC121,Jithesh Kumar,https://www.skills.google/public_profiles/1b4cd55d-38aa-4c11-b4c6-36fcbfc683b6,0,0%,,No Milestone,Not applicable
+111,VC090,Jithesh.N,https://www.skills.google/public_profiles/1d177d6c-a604-4ef4-a865-25746c77271a,0,0%,,No Milestone,Not applicable
+112,VC135,Jyothi,https://www.skills.google/public_profiles/c3ffcce5-e3fd-478d-a54b-5a3a3d8c4298,0,0%,,No Milestone,Not applicable
+113,VC113,K Pavithra,https://www.skills.google/public_profiles/efed39d0-5405-4348-a3f5-ca7ced3bc685,0,0%,,No Milestone,Not applicable
+114,VC005,Karan shetty,https://www.skills.google/public_profiles/4169fb6b-2cf6-453b-acb5-47eb71c48014,0,0%,,No Milestone,Not applicable
+115,VC151,Keerthan A,https://www.skills.google/public_profiles/67e8cd6c-deab-4d72-8cfa-54801e0f6581,0,0%,,No Milestone,Not applicable
+116,VC142,Keerthan P,https://www.skills.google/public_profiles/ebcf4fc4-7979-4ddf-ae40-5a673c51779b,0,0%,,No Milestone,Not applicable
+117,VC075,Keerthana,https://www.skills.google/public_profiles/cdd60629-3ea4-4824-9600-8a80ac75363c,0,0%,,No Milestone,Not applicable
+118,VC171,Kowshik.M,https://www.skills.google/public_profiles/4c0d9237-e1b8-439b-a57b-2165a9b2b3c5,0,0%,,No Milestone,Not applicable
+119,VC040,Kruthik B Rai,https://www.skills.google/public_profiles/67e9e81e-f981-4fad-aa88-e332a10019f3,0,0%,,No Milestone,Not applicable
+120,VC153,Kruthika NS,https://www.skills.google/public_profiles/93c9f1ff-c205-4fe3-b4d5-5ccbeb6bb639,0,0%,,No Milestone,Not applicable
+121,VC076,Kshira M,https://www.skills.google/public_profiles/3c317837-197c-4701-9496-383f900e35f6,0,0%,,No Milestone,Not applicable
+122,VC116,Kushika D,https://www.skills.google/public_profiles/ff9d9fbe-f5d7-430c-8929-fe0aee806391,0,0%,,No Milestone,Not applicable
+123,VC108,Kushith K,https://www.skills.google/public_profiles/769e65d4-c03a-4d8a-9e32-e34ffe55fbfb,0,0%,,No Milestone,Not applicable
+124,VC155,Lavanya K,https://www.skills.google/public_profiles/9ca0e78e-033e-4eae-8024-71b4ad70b7fe,0,0%,,No Milestone,Not applicable
+125,VC143,Likhith kumar,https://www.skills.google/public_profiles/cb5500e3-24c8-4748-9b5b-1bbceedf9adb,0,0%,,No Milestone,Not applicable
+126,VC103,Manasa,https://www.skills.google/public_profiles/075f56ac-f72e-4522-b18c-0dde4c7d1783,0,0%,,No Milestone,Not applicable
+127,VC161,Manvitha,https://www.skills.google/public_profiles/befc4a50-d63c-4997-a538-829e677bf0a5,0,0%,,No Milestone,Not applicable
+128,VC055,Mithun,https://www.skills.google/public_profiles/f2dc3e0b-eff7-432d-ba67-0d453f510273,0,0%,,No Milestone,Not applicable
+129,VC137,Mithun K,https://www.skills.google/public_profiles/1bc3455b-4e30-40b4-8d70-e2608801cb15,0,0%,,No Milestone,Not applicable
+130,VC163,Mithun K,https://www.skills.google/public_profiles/4c5720b6-9f02-409a-8f67-9bf46d708406,0,0%,,No Milestone,Not applicable
+131,VC077,Moksha,https://www.skills.google/public_profiles/c6464704-eab5-4c3b-be61-67201c3634bb,0,0%,,No Milestone,Not applicable
+132,VC138,Nandesh Gowda,https://www.skills.google/public_profiles/15e6ffb2-579b-4a35-92fc-fa1d7526f5a2,0,0%,,No Milestone,Not applicable
+133,VC039,Navaneeth K S,https://www.skills.google/public_profiles/e0e926af-e1b5-4b6c-8f91-aeb62085e171,0,0%,,No Milestone,Not applicable
+134,VC175,Navyashree,https://www.skills.google/public_profiles/1f6d9f09-33b7-4da3-aa14-8b06f1440153,0,0%,,No Milestone,Not applicable
+135,VC033,Neeraj S,https://www.skills.google/public_profiles/ee02e614-e3b2-4674-8400-f09a23c12532,0,0%,,No Milestone,Not applicable
+136,VC119,Nikhil G R Rai,https://www.skills.google/public_profiles/2647bcda-36e7-4f5f-a58b-beb05a7f0f0a,0,0%,,No Milestone,Not applicable
+137,VC064,Nireeksha AR,https://www.skills.google/public_profiles/8b8620a2-1583-4304-a48d-25c74e565b35,0,0%,,No Milestone,Not applicable
+138,VC042,Nishchitha,https://www.skills.google/public_profiles/53ec0c8c-a822-4ca9-8666-c76f21327226,0,0%,,No Milestone,Not applicable
+139,VC046,Niveditha B,https://www.skills.google/public_profiles/178b9923-59ff-46db-8451-235b36c2f7f9,0,0%,,No Milestone,Not applicable
+140,VC166,Niveditha B,https://www.skills.google/public_profiles/2bb23643-4133-4cd3-b964-96d53ec04e33,0,0%,,No Milestone,Not applicable
+141,VC056,Pavanraj,https://www.skills.google/public_profiles/eb78fb21-0eff-41c1-a7db-e7e6e3721633,0,0%,,No Milestone,Not applicable
+142,VC180,Pooja A,https://www.skills.google/public_profiles/e22c224d-0440-462a-aae8-a25b2427e19b,0,0%,,No Milestone,Not applicable
+143,VC140,Pradyumna Prabhu,https://www.skills.google/public_profiles/c1d95e3b-52a3-43e2-882f-3722394f1748,0,0%,,No Milestone,Not applicable
+144,VC124,Prajna. P,https://www.skills.google/public_profiles/aabddc4f-0768-4018-aa5b-33285a2b82be,0,0%,,No Milestone,Not applicable
+145,VC154,Prajwala shivanaik Baganavar,https://www.skills.google/public_profiles/9f4d36a9-0508-4ef7-91f4-3b6617189c12,0,0%,,No Milestone,Not applicable
+146,VC141,Prakhyath Acharya,https://www.skills.google/public_profiles/158a2a8e-ca5d-4b47-8f06-fe990cb113ca,0,0%,,No Milestone,Not applicable
+147,VC178,Pramod p,https://www.skills.google/public_profiles/db27ace1-c0b2-48df-a779-0685cea60bf0,0,0%,,No Milestone,Not applicable
+148,VC120,Prathiksha,https://www.skills.google/public_profiles/54ff4b8d-07ea-4cc7-ae25-69fad0f03fc5,0,0%,,No Milestone,Not applicable
+149,VC080,Preethal D V,https://www.skills.google/public_profiles/a40b28e8-eb73-473c-b644-126eb1274189,0,0%,,No Milestone,Not applicable
+150,VC162,Punya,https://www.skills.google/public_profiles/1cb8cc75-3041-4083-b424-d98ffb9d3cef,0,0%,,No Milestone,Not applicable
+151,VC158,Rajesh Kumar P,https://www.skills.google/public_profiles/351cebf4-3b01-4698-aa55-88459642334e,0,0%,,No Milestone,Not applicable
+152,VC006,Rishika,https://www.skills.google/public_profiles/ded31f0c-48b2-4d4e-9801-a64a844fd63e,0,0%,,No Milestone,Not applicable
+153,VC164,Rithesh K,https://www.skills.google/public_profiles/ed2daf8a-2119-4dd4-b0a7-2cd160a0dd79,0,0%,,No Milestone,Not applicable
+154,VC179,Sachin Rao K,https://www.skills.google/public_profiles/a8f04ecd-e18f-47af-8441-4c707a9ac2dd,0,0%,,No Milestone,"Gemini Enterprise Agent Ready, Arcade - GEAR"
+155,VC001,Sachin Upparna,https://www.skills.google/public_profiles/088bd25d-f4f5-4280-ac3f-0a896db56cc1,0,0%,,No Milestone,"Gemini Enterprise Agent Ready, Arcade - GEAR"
+156,VC172,Sachitha,https://www.skills.google/public_profiles/aef2a1ad-498c-4665-8509-b4180914259c,0,0%,,No Milestone,Not applicable
+157,VC096,Sahithya.B.S,https://www.skills.google/public_profiles/4e78f186-b93e-457d-ad27-e26a68921df1,0,0%,,No Milestone,Not applicable
+158,VC086,Samarth,https://www.skills.google/public_profiles/0cfee530-3b8d-44c8-913f-fa303252343f,0,0%,,No Milestone,Not applicable
+159,VC181,Sathwik MG,https://www.skills.google/public_profiles/6663377c-f7a1-42ea-9bf6-f54b2d7b42f7,0,0%,,No Milestone,Not applicable
+160,VC105,Sathyaprasad P V,https://www.skills.google/public_profiles/a2f861e9-d9b7-40bd-aa3f-89ff784d4d0c,0,0%,,No Milestone,Not applicable
+161,VC147,Sharanya,https://www.skills.google/public_profiles/83139c28-fe78-41bf-95d4-74976eb2d2f5,0,0%,,No Milestone,Not applicable
+162,VC082,Shravan.k,https://www.skills.google/public_profiles/6d4816a8-96b4-4521-99e2-5650432cb0ab,0,0%,,No Milestone,Not applicable
+163,VC054,Shravya CH,https://www.skills.google/public_profiles/a3492081-f4ba-467c-9fe7-cfd6292641a1,0,0%,,No Milestone,Not applicable
+164,VC176,Shreya,https://www.skills.google/public_profiles/9c7a4490-c490-4e0a-b22e-c8e98338f2cf,0,0%,,No Milestone,Not applicable
+165,VC089,Shreyas,https://www.skills.google/public_profiles/67f206c4-3439-48d1-80b5-117d9ee64d42,0,0%,,No Milestone,Not applicable
+166,VC112,Sinchana Shetty,https://www.skills.google/public_profiles/5fd65660-4cc4-4cf4-8d7b-89c22030e8cf,0,0%,,No Milestone,Not applicable
+167,VC059,Siri Shenoy,https://www.skills.google/public_profiles/bd07dc88-e91a-43a8-826e-4ff39e096401,0,0%,,No Milestone,Not applicable
+168,VC031,Skanda Prasad K,https://www.skills.google/public_profiles/0342e638-b792-43af-913d-0bc738acf81e,0,0%,,No Milestone,Not applicable
+169,VC117,Srijan,https://www.skills.google/public_profiles/bbc3d336-945a-462d-a904-19cf8ddbe268,0,0%,,No Milestone,Not applicable
+170,VC088,Sumukha S H,https://www.skills.google/public_profiles/32eb5098-0915-4d24-946c-39aa2502143e,0,0%,,No Milestone,Not applicable
+171,VC134,Sushanth K k,https://www.skills.google/public_profiles/695498e2-3db4-4aa5-9c58-0fb4e037c340,0,0%,,No Milestone,Not applicable
+172,VC133,Thanmayi,https://www.skills.google/public_profiles/ba2af442-e89b-40fc-a217-b0aa9e05fe6b,0,0%,,No Milestone,Not applicable
+173,VC122,Thanvi,https://www.skills.google/public_profiles/f399a02d-b26f-4cdb-827b-5b1c5f2a16c4,0,0%,,No Milestone,Not applicable
+174,VC150,Tharun k,https://www.skills.google/public_profiles/3dd9c7d8-26d7-4e8d-9914-9f1924c91945,0,0%,,No Milestone,Not applicable
+175,VC073,Thrisha,https://www.skills.google/public_profiles/b65324d1-ff62-430c-9b60-f5ebbb647419,0,0%,,No Milestone,Not applicable
+176,VC170,Thrisha,https://www.skills.google/public_profiles/97272dcb-abb6-4a67-9534-2f34ad8ef78b,0,0%,,No Milestone,Not applicable
 177,VC085,Vaibhav Jayarama,https://www.skills.google/public_profiles/09b53b34-fc9a-41fc-9f9e-b4a336101f34,0,0%,,No Milestone,Not applicable
 178,VC125,Veekshitha M C,https://www.skills.google/public_profiles/d54a2323-14b9-4aca-b11b-041c4fa1a587,0,0%,,No Milestone,Not applicable
 179,VC174,Vidyashree Pai,https://www.skills.google/public_profiles/53dde1e2-6dde-4067-a7d2-7e8963ffd123,0,0%,,No Milestone,Not applicable
