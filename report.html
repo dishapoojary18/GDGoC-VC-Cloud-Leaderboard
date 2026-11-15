@@ -67,7 +67,7 @@
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
             margin-bottom: 25px;
         }
@@ -289,6 +289,11 @@
             <p>Skill Badges to Complete</p>
         </div>
 
+        <div class="stat-card">
+            <h2 id="completedTenLabsCount">0</h2>
+            <p>Participants Completed 10/10 Labs</p>
+        </div>
+
     </div>
 
 
@@ -350,6 +355,15 @@
             const badgesIndex = findColumn("badges completed");
 
             if (rankIndex !== -1 && nameIndex !== -1 && badgesIndex !== -1) {
+
+                // Count participants who have completed 10 or more badges.
+                const completedTenLabs = Array.from(tbody.querySelectorAll("tr"))
+                    .filter(row => (parseInt(row.cells[badgesIndex]?.textContent) || 0) >= 10)
+                    .length;
+                const completedTenLabsElement = document.getElementById("completedTenLabsCount");
+                if (completedTenLabsElement) {
+                    completedTenLabsElement.textContent = completedTenLabs;
+                }
 
                 const keepIndexes = [rankIndex, nameIndex, badgesIndex];
 
